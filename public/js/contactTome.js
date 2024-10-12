@@ -1,5 +1,8 @@
 // Khởi tạo EmailJS với user ID
-emailjs.init('yfBDjKwQxwQeXHzT8');
+require('dotenv').config();
+
+const apiKey = process.env.API_KEY;
+emailjs.init(apiKey);
 
 // Lấy form và thêm sự kiện submit
 document.getElementById('contactForm').addEventListener('submit', function (event) {
