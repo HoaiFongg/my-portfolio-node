@@ -1,0 +1,21 @@
+# Thư mục node_modules
+node_modules/
+
+# Thư mục chứa tệp tạm thời
+.tmp/
+
+# Tệp cấu hình môi trường
+.env
+
+# Tệp log
+*.log
+
+# Thư mục biên dịch
+dist/
+
+# Tệp hệ thống
+.DS_Store
+Thumbs.db
+
+# Thư mục cache
+.cache/

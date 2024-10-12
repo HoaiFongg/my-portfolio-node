@@ -1,0 +1,197 @@
+/* Ẩn nội dung với transition mượt mà */
+.hidden {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Tùy chỉnh thanh cuộn cho toàn bộ trang */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #D500F9, #6200EA, #00B4DB);
+    /* Thêm màu xanh nước biển (#00B4DB) vào gradient */
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #00B4DB, #6200EA, #D500F9);
+}
+
+/* Tùy chỉnh cho navbar */
+.navbar {
+    padding: 15px 20px;
+    position: fixed;
+    /* Sửa đổi từ sticky thành fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
+    /* Thêm màu xanh nước biển vào gradient */
+    background-size: 300% 300%;
+    animation: gradient-animation 8s ease infinite;
+    /* Hiệu ứng màu chạy */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    color: #fff;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition-delay: 0.1s;
+    border-radius: 8px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Toggler */
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,...");
+}
+
+.navbar-nav .nav-item {
+    margin-left: 15px;
+}
+
+/* Active link */
+.nav-link.active {
+    font-weight: bold;
+    color: #f8f9fa;
+}
+
+/* Custom styles */
+.avatar-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.form-section {
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
+    color: #fff;
+    padding: 30px 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+    color: #fff;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ADD8E6;
+}
+
+.footer i {
+    margin-right: 5px;
+}
+
+.navbar {
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
+    background-size: 300% 300%;
+    animation: gradient-animation 8s ease infinite;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+}
+
+.small-nav {
+    height: 50px;
+    /* Thu nhỏ chiều cao của thanh navigation */
+    padding: 5px 20px;
+    /* Giảm padding */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

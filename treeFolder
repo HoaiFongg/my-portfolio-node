@@ -1,0 +1,44 @@
+my-node-app/
+│
+├── node_modules/            # Thư mục chứa các package đã cài đặt
+│
+├── public/                  # Thư mục chứa tệp tĩnh (CSS, JS, hình ảnh)
+│   ├── css/                 # Thư mục chứa tệp CSS
+│   │   └── styles.css       # Tệp CSS chính
+│   ├── js/                  # Thư mục chứa tệp JavaScript
+│   │   ├── navbarHighlight.js # Tệp JavaScript cho navbar
+│   │   ├── contactTome.js   # Tệp JavaScript cho contact form
+│   │   └── loadContent.js    # Tệp JavaScript để tải nội dung
+│   └── images/              # Thư mục chứa hình ảnh
+│       └── avatar.JPG       # Hình ảnh của bạn
+│
+├── views/                   # Thư mục chứa các tệp EJS
+│   ├── partials/            # Thư mục chứa các phần tử EJS tái sử dụng (header, footer, nav)
+│   │   ├── navigation.ejs   # Tệp EJS cho navigation
+│   │   └── footer.ejs       # Tệp EJS cho footer
+│   ├── pages/               # Thư mục chứa các tệp EJS cho từng trang
+│   │   ├── index.ejs        # Trang chủ
+│   │   ├── about.ejs        # Trang giới thiệu
+│   │   ├── projects.ejs     # Trang dự án
+│   │   └── contact.ejs      # Trang liên hệ
+│   └── layout.ejs           # Layout chính sử dụng cho tất cả các trang
+│
+├── routes/                  # Thư mục chứa các định tuyến
+│   ├── index.js             # Định tuyến cho các trang chính
+│   └── api.js               # Định tuyến cho các API (nếu có)
+│
+├── config/                  # Thư mục chứa các cấu hình
+│   └── config.js            # Các cấu hình ứng dụng (cổng, cơ sở dữ liệu, v.v.)
+│
+├── controllers/             # Thư mục chứa các logic điều khiển cho các route
+│   ├── homeController.js     # Logic cho trang chủ
+│   ├── aboutController.js    # Logic cho trang giới thiệu
+│   └── contactController.js   # Logic cho trang liên hệ
+│
+├── models/                  # Thư mục chứa các mô hình (nếu bạn dùng cơ sở dữ liệu)
+│   └── userModel.js         # Ví dụ mô hình người dùng
+│
+├── .env                     # Tệp cấu hình môi trường
+├── .gitignore               # Tệp gitignore
+├── package.json             # Tệp cấu hình dự án Node.js
+└── server.js                # Tệp chính để khởi động server
