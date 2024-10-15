@@ -12,7 +12,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // Đường dẫn tới thư mục views
 
 // Cấu hình thư mục tĩnh để phục vụ file CSS, JS, hình ảnh
-app.use(express.static(path.join(__dirname, 'public'))); // Chỉ cần đường dẫn tới public
+app.use(express.static(path.join(__dirname, 'public'))); // Đường dẫn tới public
+app.use(express.static(path.join(__dirname, 'views'))); // Đường dẫn tới public
+
 
 // Định tuyến cho các trang
 const indexRouter = require('./routes/index'); // Định tuyến cho các trang chính

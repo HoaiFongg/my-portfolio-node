@@ -26,15 +26,4 @@ router.get('/contact', (req, res) => {
     res.render('pages/contact.ejs'); // Render tệp EJS cho trang liên hệ
 });
 
-
-// Route để render navigation.ejs
-router.get('/partials/navigation', (req, res) => {
-    res.render('partials/navigation');
-});
-
-// Route để render footer.ejs
-router.get('/partials/footer', (req, res) => {
-    res.render('partials/footer');
-});
-
 module.exports = router;
