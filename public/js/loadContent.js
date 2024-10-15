@@ -17,11 +17,11 @@ async function loadHTML(elementId, file) {
     }
 }
 
-(async function () {
+window.addEventListener('DOMContentLoaded', async () => {
     await Promise.all([
         loadHTML('navbar', 'partials/navigation.ejs'),
         loadHTML('footer', 'partials/footer.ejs')
     ]);
     document.body.classList.remove('hidden'); // Hiện nội dung sau khi tải xong
     document.getElementById('loading').classList.add('hidden'); // Ẩn loading
-})();
+});
