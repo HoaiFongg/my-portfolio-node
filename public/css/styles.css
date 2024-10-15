@@ -16,7 +16,6 @@
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, #D500F9, #6200EA, #00B4DB);
-    /* Thêm màu xanh nước biển (#00B4DB) vào gradient */
     border-radius: 12px;
     border: 2px solid #e0e0e0;
 }
@@ -26,21 +25,18 @@
 }
 
 /* Tùy chỉnh cho navbar */
-.navbar {
+#navbar {
     padding: 15px 20px;
     position: fixed;
-    /* Sửa đổi từ sticky thành fixed */
     top: 0;
     width: 100%;
     z-index: 1000;
     border-radius: 12px;
     background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
-    /* Thêm màu xanh nước biển vào gradient */
     background-size: 300% 300%;
     animation: gradient-animation 8s ease infinite;
-    /* Hiệu ứng màu chạy */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+    transition: top 0.6s ease, padding 0.3s ease, transform 0.3s ease;
 }
 
 @keyframes gradient-animation {
@@ -57,13 +53,13 @@
     }
 }
 
-.navbar-brand {
+#navbar .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
 }
 
-.nav-link {
+#navbar .nav-link {
     font-size: 1.1rem;
     padding: 10px 15px;
     color: #fff;
@@ -73,14 +69,14 @@
     border-radius: 8px;
 }
 
-.nav-link:hover {
+#navbar .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.3);
     color: #fff;
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.nav-link::after {
+#navbar .nav-link::after {
     content: '';
     position: absolute;
     width: 0;
@@ -92,7 +88,7 @@
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+#navbar .nav-link:hover::after {
     width: 100%;
     left: 0;
 }
@@ -111,7 +107,7 @@
 }
 
 /* Active link */
-.nav-link.active {
+#navbar .nav-link.active {
     font-weight: bold;
     color: #f8f9fa;
 }
@@ -161,37 +157,31 @@
     margin-right: 5px;
 }
 
-.navbar {
-    padding: 15px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
-    background-size: 300% 300%;
-    animation: gradient-animation 8s ease infinite;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
-}
-
+/* Navbar height adjustment */
 .small-nav {
     height: 50px;
-    /* Thu nhỏ chiều cao của thanh navigation */
     padding: 5px 20px;
-    /* Giảm padding */
+    transition: height 0.3s, padding 0.3s;
 }
 
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #navbar .container {
+        flex-direction: column;
     }
 
-    50% {
-        background-position: 100% 50%;
+    #navbar .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
     }
 
-    100% {
-        background-position: 0% 50%;
+    #navbar .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .col-half {
+        flex: 0 0 100%;
     }
 }

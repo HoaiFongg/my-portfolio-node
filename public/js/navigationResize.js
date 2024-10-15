@@ -1,27 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".navbar");
-    let lastScrollY = window.scrollY;
-    let ticking = false;
+let lastScrollTop = 0;
+const navbar = document.querySelector('#navbar'); // Gọi đến id "navbar"
 
-    function handleScroll() {
-        const currentScrollY = window.scrollY;
+window.addEventListener('scroll', function () {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-        if (currentScrollY > lastScrollY) {
-            // Scroll down
-            navbar.classList.add("small-nav");
-        } else if (currentScrollY < lastScrollY) {
-            // Scroll up
-            navbar.classList.remove("small-nav");
-        }
-
-        lastScrollY = currentScrollY;
-        ticking = false;
+    if (scrollTop > lastScrollTop) {
+        // Cuộn xuống, ẩn thanh điều hướng
+        navbar.style.top = '-100px';
+    } else if (scrollTop < lastScrollTop) {
+        // Cuộn lên, hiện thanh điều hướng
+        navbar.style.top = '0';
     }
 
-    window.addEventListener("scroll", function () {
-        if (!ticking) {
-            window.requestAnimationFrame(handleScroll);
-            ticking = true;
-        }
-    });
+    lastScrollTop = scrollTop;
 });
