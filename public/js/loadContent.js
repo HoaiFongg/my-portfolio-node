@@ -17,11 +17,16 @@ async function loadHTML(elementId, file) {
     }
 }
 
-window.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
     await Promise.all([
         loadHTML('navbar', 'partials/navigation.ejs'),
         loadHTML('footer', 'partials/footer.ejs')
     ]);
     document.body.classList.remove('hidden'); // Hiện nội dung sau khi tải xong
-    document.getElementById('loading').classList.add('hidden'); // Ẩn loading
+    const loadingElement = document.getElementById('loading');
+    if (loadingElement) {
+        loadingElement.classList.add('hidden'); // Ẩn loading nếu tồn tại
+    } else {
+        console.error('Phần tử loading không tồn tại');
+    }
 });
