@@ -6,11 +6,12 @@ async function loadHTML(elementId, file) {
 
         const element = document.getElementById(elementId);
         if (!element) {
-            console.error(`Element with ID "${elementId}" not found. Cannot set innerHTML.`);
+            console.error(`Element with ID "${elementId}" not found. Cannot insert HTML.`);
             return;
         }
 
-        element.innerHTML = data;
+        // Chèn nội dung HTML vào cuối phần tử
+        element.insertAdjacentHTML('beforeend', data);
         element.style.opacity = '1';  // Hiển thị phần tử sau khi tải
 
     } catch (error) {
