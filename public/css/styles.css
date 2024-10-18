@@ -1,4 +1,3 @@
-/* Class để ẩn nội dung với transition mượt mà */
 .hidden {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -28,10 +27,10 @@
 #navbar {
     padding: 15px 20px;
     position: fixed;
-    /* Giữ vị trí cố định thay vì absolute */
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 2000;
+    /* Tăng giá trị z-index */
     border-radius: 12px;
     background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
     background-size: 300% 300%;
