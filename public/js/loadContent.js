@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.log("Loading navbar and footer...");
 
         await Promise.all([
-            loadHTML('navbar', 'partials/navigation.ejs'),
-            loadHTML('footer', 'partials/footer.ejs')
+            loadHTML('navbar', '/partials/navigation.ejs'),
+            loadHTML('footer', '/partials/footer.ejs')
         ]);
 
         // Xóa class 'hidden' của body sau khi nội dung đã được tải
