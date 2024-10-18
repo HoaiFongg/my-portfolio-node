@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector("#header");
+
+    if (!navbar) {
+        console.error('Element with ID "header" not found.');
+        return;
+    }
+
     let lastScrollY = window.scrollY;
     let ticking = false;
 
