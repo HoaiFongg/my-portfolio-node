@@ -1,5 +1,5 @@
 let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar'); // Gọi đến id "navbar"
+const navbar = document.querySelector('#navbar'); // Gọi đến id "navbar"
 
 window.addEventListener('scroll', function () {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
