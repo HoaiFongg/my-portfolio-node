@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleScroll() {
         const currentScrollY = window.scrollY;
-
         if (currentScrollY > lastScrollY) {
             // Scroll down
             navbar.classList.add("small-nav");
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Scroll up
             navbar.classList.remove("small-nav");
         }
-
         lastScrollY = currentScrollY;
         ticking = false;
     }
