@@ -21,18 +21,15 @@ async function loadHTML(elementId, file) {
 
 document.addEventListener('DOMContentLoaded', async function () {
     try {
-        // Hiển thị thông báo bắt đầu load các phần tử
         console.log("Loading navbar and footer...");
 
         await Promise.all([
-            loadHTML('navbar', '/partials/navigation.ejs'),
-            loadHTML('footer', '/partials/footer.ejs')
+            loadHTML('navbar', 'partials/navigation.ejs'),
+            loadHTML('footer', 'partials/footer.ejs')
         ]);
 
-        // Xóa class 'hidden' của body sau khi nội dung đã được tải
         document.body.classList.remove('hidden');
 
-        // Ẩn phần loading
         const loadingElement = document.getElementById('loading');
         if (loadingElement) {
             loadingElement.classList.add('hidden');
