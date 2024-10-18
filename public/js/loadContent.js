@@ -8,8 +8,15 @@ async function loadHTML(elementId, file) {
             console.error(`Element with ID "${elementId}" not found. Cannot insert HTML.`);
             return;
         }
-        // Chèn nội dung HTML vào cuối phần tử
-        element.insertAdjacentHTML('beforeend', data);
+        // Tạo một phần tử div chứa nội dung HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+
+        // Chèn tất cả các phần tử con của tempDiv vào element
+        while (tempDiv.firstChild) {
+            element.insertAdjacentElement('beforeend', tempDiv.firstChild);
+        }
+
         element.style.opacity = '1';  // Hiển thị phần tử sau khi tải
     } catch (error) {
         console.error('Error loading HTML:', error);
