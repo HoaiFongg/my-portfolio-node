@@ -1,44 +1,64 @@
-async function loadHTML(elementId, file) {
+// Function to load content
+async function loadContent(url, targetId) {
     try {
-        const response = await fetch(file);
-        if (!response.ok) throw new Error(`Failed to fetch file: ${file}. Network response was not ok`);
-        const data = await response.text();
-        const element = document.getElementById(elementId);
-        if (!element) {
-            console.error(`Element with ID "${elementId}" not found. Cannot insert HTML.`);
-            return;
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-        // Tạo một phần tử div chứa nội dung HTML
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = data;
-
-        // Chèn tất cả các phần tử con của tempDiv vào element
-        while (tempDiv.firstChild) {
-            element.insertAdjacentElement('beforeend', tempDiv.firstChild);
-        }
-
-        element.style.opacity = '1';  // Hiển thị phần tử sau khi tải
+        const content = await response.text();
+        document.getElementById(targetId).innerHTML = content;
     } catch (error) {
-        console.error('Error loading HTML:', error);
+        console.error('Error loading content:', error);
     }
 }
 
-document.addEventListener('DOMContentLoaded', async function () {
+// Load navbar and footer when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    loadContent('/partials/navbar.html', 'navbar');
+    loadContent('/partials/footer.html', 'footer');
+});
+
+// Show loading indicator
+function showLoading() {
+    document.getElementById('loading').style.display = 'block';
+}
+
+// Hide loading indicator
+function hideLoading() {
+    document.getElementById('loading').style.display = 'none';
+}
+
+// Add event listener for form submission
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    showLoading();
+
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
     try {
-        console.log("Loading navbar and footer...");
-        await Promise.all([
-            loadHTML('navbar', 'partials/navigation.ejs'),
-            loadHTML('footer', 'partials/footer.ejs')
-        ]);
-        document.body.classList.remove('hidden');
-        const loadingElement = document.getElementById('loading');
-        if (loadingElement) {
-            loadingElement.classList.add('hidden');
-        } else {
-            console.error('Loading element not found.');
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-        console.log("Navbar and footer loaded successfully.");
+
+        const result = await response.json();
+        alert(result.message);
+        document.getElementById('contactForm').reset();
     } catch (error) {
-        console.error('Error during content loading:', error);
+        console.error('Error submitting form:', error);
+        alert('An error occurred. Please try again later.');
+    } finally {
+        hideLoading();
     }
 });
