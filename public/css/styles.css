@@ -1,4 +1,4 @@
-/* Ẩn nội dung với transition mượt mà */
+/* Class để ẩn nội dung với transition mượt mà */
 .hidden {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -39,6 +39,7 @@
     transition: top 0.6s ease, padding 0.3s ease;
 }
 
+/* Animation cho gradient */
 @keyframes gradient-animation {
     0% {
         background-position: 0% 50%;
@@ -101,13 +102,13 @@
     margin-left: 15px;
 }
 
-/* Active link */
+/* Link đang hoạt động */
 #navbar .nav-link.active {
     font-weight: bold;
     color: #f8f9fa;
 }
 
-/* Custom styles */
+/* Tùy chỉnh khác */
 .avatar-img {
     width: 250px;
     height: 250px;
@@ -152,14 +153,14 @@
     margin-right: 5px;
 }
 
-/* Navbar height adjustment */
+/* Điều chỉnh chiều cao navbar */
 .small-nav {
     height: 50px;
     padding: 5px 20px;
     transition: height 0.3s, padding 0.3s;
 }
 
-/* Media Queries for Responsive Design */
+/* Media Queries cho thiết kế đáp ứng */
 @media (max-width: 768px) {
     #navbar .container {
         flex-direction: column;
