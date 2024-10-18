@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".navbar");
+    const navbar = document.querySelector("#header");
     let lastScrollY = window.scrollY;
     let ticking = false;
 
