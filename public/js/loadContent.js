@@ -1,20 +1,21 @@
-// Hàm để tải nội dung HTML từ một tệp
-function loadHTML(elementId, file) {
-    return fetch(file)
-        .then(response => {
-            if (!response.ok) throw new Error('Network response was not ok');
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById(elementId).innerHTML = data;
-        })
-        .catch(error => console.error('Error loading HTML:', error));
+async function loadHTML(elementId, file) {
+    try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.text();
+        const element = document.getElementById(elementId);
+        element.innerHTML = data;
+        element.style.opacity = '1';  // Hiển thị phần tử sau khi tải
+    } catch (error) {
+        console.error('Error loading HTML:', error);
+    }
 }
 
-// Tải header và footer
-Promise.all([
-    loadHTML('navbar', 'partials/navbar.ejs'),
-    loadHTML('footer', 'partials/footer.ejs')
-]).then(() => {
+(async function () {
+    await Promise.all([
+        loadHTML('header', 'partials/navigation.ejs'),
+        loadHTML('footer', 'partials/footer.ejs')
+    ]);
     document.body.classList.remove('hidden'); // Hiện nội dung sau khi tải xong
-});
+    document.getElementById('loading').classList.add('hidden'); // Ẩn loading
+})();

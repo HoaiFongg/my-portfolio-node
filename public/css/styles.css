@@ -1,3 +1,4 @@
+/* Ẩn nội dung với transition mượt mà */
 .hidden {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -15,6 +16,7 @@
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, #D500F9, #6200EA, #00B4DB);
+    /* Thêm màu xanh nước biển (#00B4DB) vào gradient */
     border-radius: 12px;
     border: 2px solid #e0e0e0;
 }
@@ -24,18 +26,21 @@
 }
 
 /* Tùy chỉnh cho navbar */
-#navbar {
+.navbar {
     padding: 15px 20px;
     position: fixed;
+    /* Sửa đổi từ sticky thành fixed */
     top: 0;
     width: 100%;
-    z-index: 2000;
-    /* Tăng giá trị z-index */
+    z-index: 1000;
     border-radius: 12px;
     background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
+    /* Thêm màu xanh nước biển vào gradient */
     background-size: 300% 300%;
     animation: gradient-animation 8s ease infinite;
+    /* Hiệu ứng màu chạy */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
 }
 
 @keyframes gradient-animation {
@@ -52,39 +57,44 @@
     }
 }
 
-#navbar .navbar-brand {
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
 }
 
-#navbar .nav-link {
+.nav-link {
     font-size: 1.1rem;
     padding: 10px 15px;
     color: #fff;
     position: relative;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition-delay: 0.1s;
     border-radius: 8px;
 }
 
-#navbar .nav-link:hover {
+.nav-link:hover {
     background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-#navbar .nav-link::after {
+.nav-link::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
+    display: block;
+    margin-top: 5px;
     right: 0;
     background: #fff;
     transition: width 0.3s ease;
 }
 
-#navbar .nav-link:hover::after {
+.nav-link:hover::after {
     width: 100%;
+    left: 0;
 }
 
 /* Toggler */
@@ -100,13 +110,13 @@
     margin-left: 15px;
 }
 
-/* Link đang hoạt động */
-#navbar .nav-link.active {
+/* Active link */
+.nav-link.active {
     font-weight: bold;
     color: #f8f9fa;
 }
 
-/* Tùy chỉnh khác */
+/* Custom styles */
 .avatar-img {
     width: 250px;
     height: 250px;
@@ -151,29 +161,37 @@
     margin-right: 5px;
 }
 
-/* Điều chỉnh chiều cao navbar */
-.small-nav {
-    height: 50px;
-    padding: 5px 20px;
+.navbar {
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
+    background-size: 300% 300%;
+    animation: gradient-animation 8s ease infinite;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
 }
 
-/* Media Queries cho thiết kế đáp ứng */
-@media (max-width: 768px) {
-    #navbar .container {
-        flex-direction: column;
+.small-nav {
+    height: 50px;
+    /* Thu nhỏ chiều cao của thanh navigation */
+    padding: 5px 20px;
+    /* Giảm padding */
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
     }
 
-    #navbar .navbar-nav {
-        flex-direction: column;
-        width: 100%;
+    50% {
+        background-position: 100% 50%;
     }
 
-    #navbar .nav-link {
-        width: 100%;
-        text-align: center;
-    }
-
-    .col-half {
-        flex: 0 0 100%;
+    100% {
+        background-position: 0% 50%;
     }
 }
