@@ -1,8 +1,8 @@
 /* Class để ẩn nội dung với transition mượt mà */
-.hidden {
+/* .hidden {
     opacity: 0;
     transition: opacity 0.3s ease;
-}
+} */
 
 /* Tùy chỉnh thanh cuộn cho toàn bộ trang */
 ::-webkit-scrollbar {

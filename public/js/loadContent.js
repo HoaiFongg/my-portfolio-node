@@ -15,6 +15,4 @@ function loadHTML(elementId, file) {
 Promise.all([
     loadHTML('navbar', 'partials/navigation.ejs'),
     loadHTML('footer', 'partials/footer.ejs')
-]).then(() => {
-    document.body.classList.remove('hidden'); // Hiện nội dung sau khi tải xong
-});
+])
