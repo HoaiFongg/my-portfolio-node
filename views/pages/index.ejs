@@ -4,66 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://unpkg.com/@barba/core"></script> <!-- Thêm script cho Barba -->
+    <title>Document</title>
+    <style>
+        .hidden {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Đoạn CSS của bạn ở đây */
+    </style>
 </head>
 
 <body class="hidden">
-    <div id="navbar"></div> <!-- Nơi chèn header -->
-    <div id="loading">Loading...</div> <!-- Thêm hiệu ứng tải -->
-    <!-- Nội dung trang -->
-    <div class="container mt-5" data-barba="wrapper">
-        <div class="text-center" data-barba="container">
-            <h1>Welcome to My Portfolio</h1>
-            <p class="lead">
-                Hello, this is a website I do with many different AI tools...
-            </p>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <h2>About Me</h2>
-                <p>
-                    Hello, I'm Hoaifong...
-                </p>
-                <p>Feel free to check out my projects and contact me for any collaborations!</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="/images/avatar.JPG" alt="Avatar" class="avatar-img">
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-8 mx-auto form-section">
-                <h2>Contact Me</h2>
-                <form id="contactForm">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Your Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Write your message here"
-                            required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div id="footer"></div> <!-- Nơi chèn footer -->
+    <div id="loading">Loading...</div>
+    <div id="navbar"></div>
+    <div id="footer"></div>
 
-    <script src="/js/loadContent.js" defer></script>
-    <script src="/js/navbarHighlight.js" defer></script>
-    <script src="/js/transition.js" defer></script>
-    <script src="/js/navigationResize.js" defer></script>
+    <script>
+        async function loadHTML(elementId, file) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) throw new Error(`Failed to fetch file: ${file}. Network response was not ok`);
+                const data = await response.text();
+                const element = document.getElementById(elementId);
+                if (!element) {
+                    console.error(`Element with ID "${elementId}" not found. Cannot insert HTML.`);
+                    return;
+                }
+                // Tạo một phần tử div chứa nội dung HTML
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = data;
+
+                // Chèn tất cả các phần tử con của tempDiv vào element
+                while (tempDiv.firstChild) {
+                    element.insertAdjacentElement('beforeend', tempDiv.firstChild);
+                }
+
+                element.style.opacity = '1';  // Hiển thị phần tử sau khi tải
+            } catch (error) {
+                console.error('Error loading HTML:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                console.log("Loading navbar and footer...");
+                await Promise.all([
+                    loadHTML('navbar', 'partials/navigation.ejs'),
+                    loadHTML('footer', 'partials/footer.ejs')
+                ]);
+                document.body.classList.remove('hidden');
+                const loadingElement = document.getElementById('loading');
+                if (loadingElement) {
+                    loadingElement.classList.add('hidden');
+                } else {
+                    console.error('Loading element not found.');
+                }
+                console.log("Navbar and footer loaded successfully.");
+            } catch (error) {
+                console.error('Error during content loading:', error);
+            }
+        });
+    </script>
 </body>
 
 </html>
