@@ -13,61 +13,61 @@
 </head>
 
 <body class="hidden">
-    <div id="header" class="navbar"></div> <!-- Nơi chèn header -->
-    <div id="loading">Loading...</div> <!-- Thêm hiệu ứng tải -->
+    <div id="barba-wrapper">
+        <div class="barba-container">
+            <div id="header" class="navbar"></div> <!-- Nơi chèn header -->
+            <div id="loading">Loading...</div> <!-- Thêm hiệu ứng tải -->
 
-    <!-- Nội dung trang -->
-    <div class="container mt-5" data-barba="container">
-        <div class="text-center">
-            <h1>Welcome to My Portfolio</h1>
-            <p class="lead">
-                Hello, this is a website I do with many different AI tools...
-            </p>
-        </div>
+            <!-- Nội dung trang -->
+            <div class="container mt-5">
+                <div class="text-center">
+                    <h1>Welcome to My Portfolio</h1>
+                    <p class="lead">Hello, this is a website I do with many different AI tools...</p>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h2>About Me</h2>
+                        <p>Hello, I'm Hoaifong...</p>
+                        <p>Feel free to check out my projects and contact me for any collaborations!</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="/images/avatar.JPG" alt="Avatar" class="avatar-img">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-8 mx-auto form-section">
+                        <h2>Contact Me</h2>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4"
+                                    placeholder="Write your message here" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <h2>About Me</h2>
-                <p>
-                    Hello, I'm Hoaifong...
-                </p>
-                <p>Feel free to check out my projects and contact me for any collaborations!</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="/images/avatar.JPG" alt="Avatar" class="avatar-img">
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-md-8 mx-auto form-section">
-                <h2>Contact Me</h2>
-                <form id="contactForm">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Your Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Write your message here"
-                            required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
+            <div id="footer"></div> <!-- Nơi chèn footer -->
         </div>
     </div>
 
-    <div id="footer"></div> <!-- Nơi chèn footer -->
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="/js/loadContent.js" defer></script> <!-- Tham chiếu đến tệp JavaScript -->
     <script src="/js/navbarHighlight.js" defer></script> <!-- Đường dẫn tới tệp JavaScript -->
     <script src="/js/transition.js" defer></script> <!-- Thêm tệp JavaScript cho chuyển trang -->
     <script src="/js/navigationResize.js" defer></script>
-
 </body>
 
 </html>
