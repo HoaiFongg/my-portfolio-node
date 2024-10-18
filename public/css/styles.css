@@ -27,7 +27,8 @@
 /* Tùy chỉnh cho navbar */
 #navbar {
     padding: 15px 20px;
-    position: absolute;
+    position: fixed;
+    /* Giữ vị trí cố định thay vì absolute */
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -36,10 +37,8 @@
     background-size: 300% 300%;
     animation: gradient-animation 8s ease infinite;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: top 0.6s ease, padding 0.3s ease;
 }
 
-/* Animation cho gradient */
 @keyframes gradient-animation {
     0% {
         background-position: 0% 50%;
@@ -157,7 +156,6 @@
 .small-nav {
     height: 50px;
     padding: 5px 20px;
-    transition: height 0.3s, padding 0.3s;
 }
 
 /* Media Queries cho thiết kế đáp ứng */
