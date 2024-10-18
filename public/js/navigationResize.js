@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    console.log("Navbar element found:", navbar);
+
     let lastScrollY = window.scrollY;
     let ticking = false;
 
@@ -14,9 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentScrollY > lastScrollY) {
             // Scroll down
             navbar.classList.add("small-nav");
+            console.log("Scrolling down");
         } else if (currentScrollY < lastScrollY) {
             // Scroll up
             navbar.classList.remove("small-nav");
+            console.log("Scrolling up");
         }
         lastScrollY = currentScrollY;
         ticking = false;
