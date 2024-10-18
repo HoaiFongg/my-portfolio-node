@@ -14,8 +14,8 @@ async function loadContent(url, targetId) {
 
 // Load navbar and footer when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    loadContent('/partials/navbar.html', 'navbar');
-    loadContent('/partials/footer.html', 'footer');
+    loadContent('partials/navbar.html', 'navbar');
+    loadContent('partials/footer.html', 'footer');
 });
 
 // Show loading indicator
