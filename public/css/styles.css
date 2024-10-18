@@ -1,10 +1,10 @@
-/* Class to hide content with a smooth transition */
+/* Class để ẩn nội dung với transition mượt mà */
 .hidden {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-/* Customize scroll bar for the entire page */
+/* Tùy chỉnh thanh cuộn cho toàn bộ trang */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -24,8 +24,8 @@
     background: linear-gradient(45deg, #00B4DB, #6200EA, #D500F9);
 }
 
-/* Customize the navbar */
-#header {
+/* Tùy chỉnh navbar */
+#navbar {
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -53,13 +53,13 @@
     }
 }
 
-#header .navbar-brand {
+#navbar .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
 }
 
-#header .nav-link {
+#navbar .nav-link {
     font-size: 1.1rem;
     padding: 10px 15px;
     color: #fff;
@@ -69,14 +69,14 @@
     border-radius: 8px;
 }
 
-#header .nav-link:hover {
+#navbar .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.3);
     color: #fff;
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-#header .nav-link::after {
+#navbar .nav-link::after {
     content: '';
     position: absolute;
     width: 0;
@@ -88,7 +88,7 @@
     transition: width 0.3s ease;
 }
 
-#header .nav-link:hover::after {
+#navbar .nav-link:hover::after {
     width: 100%;
     left: 0;
 }
@@ -106,13 +106,13 @@
     margin-left: 15px;
 }
 
-/* Active link */
-#header .nav-link.active {
+/* Link đang hoạt động */
+#navbar .nav-link.active {
     font-weight: bold;
     color: #f8f9fa;
 }
 
-/* Custom styles */
+/* Tùy chỉnh khác */
 .avatar-img {
     width: 250px;
     height: 250px;
