@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector("#header");
+    const navbar = document.querySelector(".navbar");
 
     if (!navbar) {
         console.error('Element with ID "header" not found.');
