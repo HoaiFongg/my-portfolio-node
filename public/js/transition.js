@@ -1,3 +1,4 @@
+// File: transition.js
 document.addEventListener('DOMContentLoaded', function () {
     barba.init({
         transitions: [{
