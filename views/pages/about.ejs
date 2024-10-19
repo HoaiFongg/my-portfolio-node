@@ -5,36 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Me - My Portfolio</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body class="hidden">
-    <div id="header"></div> <!-- Nơi chèn header -->
+    <div id="barba-wrapper">
+        <div class="barba-container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">Hi, I'm Hoaifong</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="projects">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/HoaiFongg" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://www.linkedin.com/in/ho%C3%A0i-phong-ph%E1%BA%A1m-nguy%E1%BB%85n-5b0bb626a/"
+                                    target="_blank">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-    <!-- Nội dung trang -->
-    <div class="container mt-5" data-barba="container">
-        <div class="text-center">
-            <h2>About Me</h2>
-            <p>
-                I am a Data Engineering student with a passion for data analysis and processing.
-            </p>
-            <p>
-                Here you can put more details about your background, education, and interests.
-            </p>
+            <div id="loading">Loading...</div> <!-- Thêm hiệu ứng tải -->
+
+            <!-- Nội dung trang -->
+            <div class="container mt-5 pt-5">
+                <div class="text-center">
+                    <h1>Welcome to My Portfolio</h1>
+                    <p class="lead">Hello, this is a website I do with many different AI tools...</p>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h2>About Me</h2>
+                        <p>Hello, I'm Hoaifong...</p>
+                        <p>Feel free to check out my projects and contact me for any collaborations!</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="/images/avatar.JPG" alt="Avatar" class="avatar-img">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-8 mx-auto form-section">
+                        <h2>Contact Me</h2>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4"
+                                    placeholder="Write your message here" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer"></div> <!-- Nơi chèn footer -->
         </div>
-    </div>
+        <!-- Biểu tượng mũi tên quay lại đầu trang -->
+        <!-- Nút quay lại đầu trang -->
+        <div class="scroll-to-top" id="scrollToTop">
+            <i class="fas fa-arrow-up"></i>
+        </div>
 
-    <div id="footer"></div> <!-- Nơi chèn footer -->
+
+    </div>
 
     <script src="/js/loadContent.js" defer></script> <!-- Tham chiếu đến tệp JavaScript -->
     <script src="/js/navbarHighlight.js" defer></script> <!-- Đường dẫn tới tệp JavaScript -->
-    <script src="/js/navigationResize.js" defer></script>
-
-
+    <script src="/js/transition.js" defer></script> <!-- Thêm tệp JavaScript cho chuyển trang -->
+    <script src="/js/backToTop.js" defer></script>
 </body>
 
 </html>

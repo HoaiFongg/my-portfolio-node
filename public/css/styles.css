@@ -140,3 +140,50 @@
 .footer i {
     margin-right: 5px;
 }
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    /* Khoảng cách từ đáy */
+    right: 30px;
+    /* Khoảng cách từ bên phải */
+    width: 60px;
+    /* Đường kính của nút */
+    height: 60px;
+    /* Đường kính của nút */
+    background-color: #f0f0f0;
+    /* Màu nền trắng xám nhạt */
+    color: #4a4a4a;
+    /* Màu chữ xám đậm */
+    border-radius: 50%;
+    /* Để nút có hình tròn */
+    display: flex;
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Con trỏ chuột khi di chuột lên nút */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    /* Để nút nằm trên tất cả các phần khác */
+}
+
+.scroll-to-top:hover {
+    background-color: #e0e0e0;
+    /* Màu sắc khi hover */
+    transform: scale(1.1);
+    /* Hiệu ứng phóng to nhẹ khi hover */
+}
+
+/* Icon */
+.scroll-to-top i {
+    font-size: 24px;
+    /* Kích thước icon */
+    line-height: 1;
+    /* Căn giữa icon */
+    text-align: center;
+    /* Căn giữa icon */
+}
