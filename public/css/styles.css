@@ -1,5 +1,8 @@
 /* Class để ẩn nội dung với transition mượt mà */
-
+.hidden {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
 /* Tùy chỉnh thanh cuộn cho toàn bộ trang */
 ::-webkit-scrollbar {
@@ -21,8 +24,8 @@
     background: linear-gradient(45deg, #00B4DB, #6200EA, #D500F9);
 }
 
-/* Tùy chỉnh cho navbar */
-.navbar {
+/* Tùy chỉnh navbar */
+#navbar {
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -31,24 +34,83 @@
     border-radius: 12px;
     background: linear-gradient(135deg, #D500F9, #6200EA, #00B4DB);
     background-size: 300% 300%;
+    animation: gradient-animation 8s ease infinite;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
 }
 
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
 
-.navbar .nav-link {
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+#navbar .nav-link {
     font-size: 1.1rem;
     padding: 10px 15px;
     color: #fff;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition-delay: 0.1s;
     border-radius: 8px;
 }
 
-.navbar .nav-link:hover {
+#navbar .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.3);
     color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+#navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width 0.3s ease;
+}
 
+#navbar .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
 
+/* Toggler */
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,...");
+}
+
+.navbar-nav .nav-item {
+    margin-left: 15px;
+}
+
+/* Link đang hoạt động */
+#navbar .nav-link.active {
+    font-weight: bold;
+    color: #f8f9fa;
+}
 
 /* Tùy chỉnh khác */
 .avatar-img {
@@ -93,4 +155,10 @@
 
 .footer i {
     margin-right: 5px;
+}
+
+/* Small navbar */
+.small-nav {
+    height: 50px;
+    padding: 5px 20px;
 }
