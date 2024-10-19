@@ -24,8 +24,8 @@
     background: linear-gradient(45deg, #00B4DB, #6200EA, #D500F9);
 }
 
-/* Tùy chỉnh navbar */
-#navbar {
+/* Tùy chỉnh cho navbar */
+.navbar {
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -39,37 +39,40 @@
     transition: height 0.3s ease, padding 0.3s ease, transform 0.3s ease;
 }
 
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-#navbar .navbar-brand {
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
 }
 
-#navbar .nav-link {
+.navbar-toggler {
+    display: none;
+    /* Hide the toggler if not using JavaScript for toggling */
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
     font-size: 1.1rem;
     padding: 10px 15px;
     color: #fff;
-    position: relative;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    transition-delay: 0.1s;
+    text-decoration: none;
     border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#navbar .nav-link:hover {
+.nav-link:hover {
     background-color: rgba(255, 255, 255, 0.3);
     color: #fff;
     transform: scale(1.1);
@@ -98,21 +101,22 @@
     border-color: white;
 }
 
-.navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,...");
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.navbar-nav .nav-item {
-    margin-left: 15px;
+.navbar-collapse.collapse {
+    display: none;
+    /* Collapse by default */
 }
 
-/* Link đang hoạt động */
-#navbar .nav-link.active {
-    font-weight: bold;
-    color: #f8f9fa;
+.navbar-collapse.collapse.show {
+    display: flex;
+    /* Show when expanded */
 }
 
-/* Tùy chỉnh khác */
+/* Custom styles */
 .avatar-img {
     width: 250px;
     height: 250px;
