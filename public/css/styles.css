@@ -1,8 +1,5 @@
 /* Class để ẩn nội dung với transition mượt mà */
-.hidden {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+
 
 /* Tùy chỉnh thanh cuộn cho toàn bộ trang */
 ::-webkit-scrollbar {
@@ -37,11 +34,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-}
 
 .navbar .nav-link {
     font-size: 1.1rem;
@@ -55,22 +47,8 @@
     color: #fff;
 }
 
-.navbar-toggler {
-    border-color: white;
-}
 
-.navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,...");
-}
 
-.navbar-nav .nav-item {
-    margin-left: 15px;
-}
-
-.navbar .nav-link.active {
-    font-weight: bold;
-    color: #f8f9fa;
-}
 
 /* Tùy chỉnh khác */
 .avatar-img {
