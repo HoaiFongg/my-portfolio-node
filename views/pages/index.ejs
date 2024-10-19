@@ -55,55 +55,110 @@
             </nav>
 
             <div id="loading">Loading...</div> <!-- Thêm hiệu ứng tải -->
-
             <!-- Nội dung trang -->
             <div class="container mt-5 pt-5">
-                <div class="text-center">
-                    <h1>Welcome to My Portfolio</h1>
-                    <p class="lead">Hello, this is a website I do with many different AI tools...</p>
+                <!-- Phần tiêu đề chính -->
+                <div class="hero-section text-center mb-5">
+                    <h1 class="display-4 animate__animated animate__fadeInDown">Welcome to My AI-Generated Portfolio
+                    </h1>
+                    <p class="lead animate__animated animate__fadeInUp">I'm Phạm Nguyễn Hoài Phong, a Data Engineer
+                        enthusiast driven by AI technologies.</p>
+                    <a href="projects.html"
+                        class="btn btn-outline-light btn-lg animate__animated animate__fadeInUp mt-3">Explore My
+                        Projects</a>
                 </div>
-                <div class="row mt-4">
+
+                <!-- Phần giới thiệu -->
+                <div class="row align-items-center mt-5">
                     <div class="col-md-6">
-                        <h2>About Me</h2>
-                        <p>Hello, I'm Hoaifong...</p>
-                        <p>Feel free to check out my projects and contact me for any collaborations!</p>
+                        <h2 class="animate__animated animate__fadeInLeft">About Me</h2>
+                        <p class="animate__animated animate__fadeInLeft">I’m a data enthusiast passionate about
+                            transforming raw data into actionable insights. With a strong background in data analysis
+                            and engineering, I leverage AI tools to automate workflows and optimize processes.</p>
+                        <p class="animate__animated animate__fadeInLeft">My goal is to become a Data Engineer and work
+                            on large-scale data systems that empower businesses to make data-driven decisions.</p>
+                        <a href="about.html" class="btn btn-primary animate__animated animate__fadeInLeft mt-3">Learn
+                            More About Me</a>
                     </div>
                     <div class="col-md-6 text-center">
-                        <img src="/images/avatar.JPG" alt="Avatar" class="avatar-img">
+                        <img src="/images/avatar.JPG" alt="Avatar"
+                            class="avatar-img rounded-circle animate__animated animate__zoomIn">
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-md-8 mx-auto form-section">
-                        <h2>Contact Me</h2>
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name"
-                                    required>
+
+                <!-- Phần kỹ năng -->
+                <div class="skills-section text-center mt-5">
+                    <h2 class="animate__animated animate__fadeInUp">Skills</h2>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="skill-card animate__animated animate__fadeInUp">
+                                <i class="fas fa-code fa-3x mb-3"></i>
+                                <h4>Programming</h4>
+                                <p>Python, SQL</p>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="name@example.com"
-                                    required>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-card animate__animated animate__fadeInUp">
+                                <i class="fas fa-chart-line fa-3x mb-3"></i>
+                                <h4>Data Analysis</h4>
+                                <p>Data Collection, Cleaning, Visualization</p>
                             </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="4"
-                                    placeholder="Write your message here" required></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-card animate__animated animate__fadeInUp">
+                                <i class="fas fa-database fa-3x mb-3"></i>
+                                <h4>Data Engineering</h4>
+                                <p>ETL, Data Warehousing, Automation</p>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Phần dự án nổi bật -->
+                <div class="projects-section text-center mt-5">
+                    <h2 class="animate__animated animate__fadeInUp">Highlighted Projects</h2>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="project-card animate__animated animate__fadeInUp">
+                                <img src="/images/Predict_Students.png" alt="Project 1" class="img-fluid rounded mb-3">
+                                <h4>Predict Student Progress</h4>
+                                <p>Automated data collection and prediction of student academic performance using Python
+                                    and Random Forest models.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="project-card animate__animated animate__fadeInUp">
+                                <img src="/images/Power_BI_visual_dashboard.png" alt="Project 2"
+                                    class="img-fluid rounded mb-3">
+                                <h4>Global Customer Analysis</h4>
+                                <p>Analyzed global retail customer data using Power BI, Excel, and DAX to generate
+                                    insights for business decisions.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="project-card animate__animated animate__fadeInUp">
+                                <img src="/images/Data_Warehouse.png" alt="Project 3" class="img-fluid rounded mb-3">
+                                <h4>Data Warehouse for Retail</h4>
+                                <p>Built a data warehouse for managing and analyzing retail data from 2,500 households
+                                    using SQL Server and ETL processes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="projects"
+                        class="btn btn-outline-primary btn-lg mt-4 animate__animated animate__fadeInUp">View All
+                        Projects</a>
+                    <p></p>
                 </div>
             </div>
+
 
             <div id="footer"></div> <!-- Nơi chèn footer -->
         </div>
 
-        <!-- Nút quay lại đầu trang -->
+        <!-- Nút quay lại đầu trang
         <div class="scroll-to-top" id="scrollToTop">
             <i class="fas fa-arrow-up"></i>
-        </div>
+        </div> -->
 
     </div>
 
