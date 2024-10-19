@@ -13,8 +13,8 @@ async function loadHTML(elementId, file) {
 
 (async function () {
     await Promise.all([
-        loadHTML('navbar', 'partials/navigation.ejs'),
-        loadHTML('footer', 'partials/footer.ejs')
+        loadHTML('footer', 'partials/footer.ejs'),
+        loadHTML('navbar', 'partials/navigation.ejs')
     ]);
     document.body.classList.remove('hidden'); // Hiện nội dung sau khi tải xong
     document.getElementById('loading').classList.add('hidden'); // Ẩn loading
