@@ -5,7 +5,7 @@ async function loadHTML(elementId, file) {
         const data = await response.text();
         const element = document.getElementById(elementId);
         element.innerHTML = data;
-        element.style.opacity = '1';  // Hiển thị phần tử sau khi tải
+        element.style.opacity = '4';  // Hiển thị phần tử sau khi tải
     } catch (error) {
         console.error('Error loading HTML:', error);
     }
@@ -13,7 +13,7 @@ async function loadHTML(elementId, file) {
 
 (async function () {
     await Promise.all([
-        loadHTML('navbar', 'partials/navigation.ejs'),
+        // loadHTML('navbar', 'partials/navigation.ejs'),
         loadHTML('footer', 'partials/footer.ejs')
     ]);
     document.body.classList.remove('hidden'); // Hiện nội dung sau khi tải xong
