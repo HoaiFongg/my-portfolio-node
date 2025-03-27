@@ -1,0 +1,199 @@
+<%- contentFor('body') %>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="mb-0">Blog</h1>
+                    <a href="/blog/new" class="btn btn-primary">
+                        <i class="fas fa-plus-circle me-2"></i>Create New Post
+                    </a>
+                </div>
+
+                <!-- Search and Filter Section -->
+                <div class="blog-filters mb-4 p-3 rounded bg-light border" data-aos="fade-up">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="blog-search"
+                                    placeholder="Search blog posts...">
+                                <button class="btn btn-primary" type="button" id="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex gap-2 flex-wrap">
+                                <select class="form-select" id="tag-filter">
+                                    <option value="">All Categories</option>
+                                    <option value="JavaScript">JavaScript</option>
+                                    <option value="Node.js">Node.js</option>
+                                    <option value="Backend">Backend</option>
+                                    <option value="CSS">CSS</option>
+                                    <option value="Web Design">Web Design</option>
+                                    <option value="Frontend">Frontend</option>
+                                </select>
+                                <select class="form-select" id="sort-filter">
+                                    <option value="newest">Newest First</option>
+                                    <option value="oldest">Oldest First</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <% if (posts.length> 0) { %>
+                    <div class="row g-4 blog-post-container">
+                        <% posts.forEach(post=> { %>
+                            <div class="col-md-6 col-lg-4 mb-4 blog-item" data-aos="fade-up"
+                                data-tags="<%= post.tags.join(' ') %>">
+                                <div class="blog-card h-100">
+                                    <% if (post.image) { %>
+                                        <img src="<%= post.image %>" alt="<%= post.title %>" class="blog-card-img">
+                                        <% } else { %>
+                                            <div class="blog-card-img bg-primary"></div>
+                                            <% } %>
+                                                <div class="blog-card-body">
+                                                    <h3 class="card-title mb-3">
+                                                        <%= post.title %>
+                                                    </h3>
+                                                    <div class="blog-content">
+                                                        <p>
+                                                            <%= post.content.replace(/<[^>]*>?/gm, '').substring(0, 100)
+                                                                %>...
+                                                        </p>
+                                                    </div>
+                                                    <div class="mt-2 mb-3">
+                                                        <% if (post.tags && post.tags.length> 0) { %>
+                                                            <% post.tags.forEach(tag=> { %>
+                                                                <span
+                                                                    class="badge bg-primary-subtle text-primary me-1 tag-badge">
+                                                                    <%= tag %>
+                                                                </span>
+                                                                <% }) %>
+                                                                    <% } %>
+                                                    </div>
+                                                </div>
+                                                <div class="blog-card-footer">
+                                                    <small class="text-muted">
+                                                        <i class="far fa-calendar-alt me-1"></i>
+                                                        <%= post.createdAt.toLocaleDateString('en-US', { year: 'numeric'
+                                                            , month: 'short' , day: 'numeric' }) %>
+                                                    </small>
+                                                    <a href="/blog/<%= post.id %>"
+                                                        class="btn btn-sm btn-outline-primary">Read More</a>
+                                                </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <!-- No results message -->
+                    <div id="no-results" class="text-center py-5 d-none">
+                        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                        <h3>No posts found</h3>
+                        <p class="text-muted">Try adjusting your search or filter criteria</p>
+                    </div>
+                    <% } else { %>
+                        <div class="text-center py-5">
+                            <i class="fas fa-file-alt fa-3x text-muted mb-3"></i>
+                            <h3>No Blog Posts Yet</h3>
+                            <p class="text-muted">Be the first to share your knowledge!</p>
+                            <a href="/blog/new" class="btn btn-primary mt-3">Create a Post</a>
+                        </div>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+
+    <%- contentFor('scripts') %>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const searchInput = document.getElementById('blog-search');
+                const tagFilter = document.getElementById('tag-filter');
+                const sortFilter = document.getElementById('sort-filter');
+                const searchBtn = document.getElementById('search-btn');
+                const blogItems = document.querySelectorAll('.blog-item');
+                const blogContainer = document.querySelector('.blog-post-container');
+                const noResults = document.getElementById('no-results');
+
+                // Function to filter blog posts
+                function filterPosts() {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    const tagValue = tagFilter.value;
+                    let visibleCount = 0;
+
+                    blogItems.forEach(item => {
+                        const title = item.querySelector('.card-title').textContent.toLowerCase();
+                        const content = item.querySelector('.blog-content').textContent.toLowerCase();
+                        const tags = item.getAttribute('data-tags').toLowerCase();
+
+                        // Check if post matches search and tag filter
+                        const matchesSearch = title.includes(searchTerm) || content.includes(searchTerm);
+                        const matchesTag = tagValue === '' || tags.includes(tagValue.toLowerCase());
+
+                        if (matchesSearch && matchesTag) {
+                            item.classList.remove('d-none');
+                            visibleCount++;
+                        } else {
+                            item.classList.add('d-none');
+                        }
+                    });
+
+                    // Show/hide no results message
+                    if (visibleCount === 0) {
+                        noResults.classList.remove('d-none');
+                    } else {
+                        noResults.classList.add('d-none');
+                    }
+                }
+
+                // Function to sort blog posts
+                function sortPosts() {
+                    const sortValue = sortFilter.value;
+                    const posts = Array.from(blogItems);
+
+                    posts.sort((a, b) => {
+                        const dateA = new Date(a.querySelector('.text-muted').textContent.trim());
+                        const dateB = new Date(b.querySelector('.text-muted').textContent.trim());
+
+                        return sortValue === 'newest' ? dateB - dateA : dateA - dateB;
+                    });
+
+                    // Remove all existing items
+                    blogItems.forEach(item => item.remove());
+
+                    // Append sorted items
+                    posts.forEach(post => {
+                        blogContainer.appendChild(post);
+                    });
+                }
+
+                // Event listeners
+                searchBtn.addEventListener('click', filterPosts);
+                searchInput.addEventListener('keyup', function (e) {
+                    if (e.key === 'Enter') {
+                        filterPosts();
+                    }
+                });
+                tagFilter.addEventListener('change', filterPosts);
+                sortFilter.addEventListener('change', function () {
+                    sortPosts();
+                    filterPosts(); // Apply existing filters after sorting
+                });
+
+                // Initialize AOS
+                AOS.init({
+                    duration: 800,
+                    once: true
+                });
+
+                // Tag badge click to set filter
+                document.querySelectorAll('.tag-badge').forEach(badge => {
+                    badge.addEventListener('click', function () {
+                        const tagText = this.textContent.trim();
+                        tagFilter.value = tagText;
+                        filterPosts();
+                    });
+                });
+            });
+        </script>

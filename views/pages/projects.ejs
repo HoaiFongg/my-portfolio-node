@@ -1,115 +1,283 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- contentFor('head') %>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
-</head>
+    <%- contentFor('body') %>
 
-<body class="hidden">
-    <div id="barba-wrapper">
-        <div class="barba-container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Hi, I'm Hoaifong</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="projects">Projects</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://github.com/HoaiFongg" target="_blank">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="https://www.linkedin.com/in/ho%C3%A0i-phong-ph%E1%BA%A1m-nguy%E1%BB%85n-5b0bb626a/"
-                                    target="_blank">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
-                                </a>
-                            </li>
-                        </ul>
+        <div class="container">
+            <section class="hero-section text-center mb-5">
+                <h1 class="display-4 animate__animated animate__fadeInDown">My Projects</h1>
+                <p class="lead animate__animated animate__fadeInUp">Explore my work in data engineering and analysis</p>
+            </section>
+
+            <section class="project-filter text-center mb-4" data-aos="fade-up">
+                <div class="d-flex justify-content-center flex-wrap">
+                    <button class="filter-btn active mx-1 mb-2" data-filter="all">All Projects</button>
+                    <button class="filter-btn mx-1 mb-2" data-filter="python">Python</button>
+                    <button class="filter-btn mx-1 mb-2" data-filter="data-viz">Data Visualization</button>
+                    <button class="filter-btn mx-1 mb-2" data-filter="ml">Machine Learning</button>
+                    <button class="filter-btn mx-1 mb-2" data-filter="sql">SQL</button>
+                    <button class="filter-btn mx-1 mb-2" data-filter="etl">ETL</button>
+                </div>
+            </section>
+
+            <section class="projects-content mb-5">
+                <div class="row project-container">
+                    <div class="col-md-4 mb-4 project-item" data-aos="fade-up" data-category="python ml">
+                        <div class="project-card h-100">
+                            <div class="project-image position-relative">
+                                <img src="/images/Predict_Students.png" alt="Student Progress Prediction"
+                                    class="img-fluid rounded-top lightbox-img" data-bs-toggle="modal"
+                                    data-bs-target="#imageModal" data-img-src="/images/Predict_Students.png"
+                                    data-img-title="Student Progress Prediction">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5>View Details</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-body p-4">
+                                <h3>Student Progress Prediction</h3>
+                                <p>Automated data collection and prediction of student academic performance using Python
+                                    and
+                                    Random Forest models.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag" data-category="python">Python</span>
+                                    <span class="skill-tag" data-category="ml">Machine Learning</span>
+                                    <span class="skill-tag">Random Forest</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 project-item" data-aos="fade-up" data-aos-delay="100"
+                        data-category="data-viz">
+                        <div class="project-card h-100">
+                            <div class="project-image position-relative">
+                                <img src="/images/Power_BI_visual_dashboard.png" alt="Global Customer Analysis"
+                                    class="img-fluid rounded-top lightbox-img" data-bs-toggle="modal"
+                                    data-bs-target="#imageModal" data-img-src="/images/Power_BI_visual_dashboard.png"
+                                    data-img-title="Global Customer Analysis">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5>View Details</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-body p-4">
+                                <h3>Global Customer Analysis</h3>
+                                <p>Analyzed global retail customer data using Power BI, Excel, and DAX to generate
+                                    insights for
+                                    business decisions.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag" data-category="data-viz">Power BI</span>
+                                    <span class="skill-tag">DAX</span>
+                                    <span class="skill-tag">Excel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 project-item" data-aos="fade-up" data-aos-delay="200"
+                        data-category="sql etl">
+                        <div class="project-card h-100">
+                            <div class="project-image position-relative">
+                                <img src="/images/Data_Warehouse.png" alt="Data Warehouse"
+                                    class="img-fluid rounded-top lightbox-img" data-bs-toggle="modal"
+                                    data-bs-target="#imageModal" data-img-src="/images/Data_Warehouse.png"
+                                    data-img-title="Data Warehouse">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5>View Details</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-body p-4">
+                                <h3>Data Warehouse for Retail</h3>
+                                <p>Built a data warehouse for managing and analyzing retail data from 2,500 households
+                                    using SQL
+                                    Server and ETL processes.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag" data-category="sql">SQL</span>
+                                    <span class="skill-tag" data-category="etl">ETL</span>
+                                    <span class="skill-tag">Data Warehouse</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 project-item" data-aos="fade-up" data-category="data-viz">
+                        <div class="project-card h-100">
+                            <div class="project-image position-relative">
+                                <img src="/images/Dashboard.png" alt="Sales Dashboard"
+                                    class="img-fluid rounded-top lightbox-img" data-bs-toggle="modal"
+                                    data-bs-target="#imageModal" data-img-src="/images/Dashboard.png"
+                                    data-img-title="Interactive Sales Dashboard">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5>View Details</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-body p-4">
+                                <h3>Interactive Sales Dashboard</h3>
+                                <p>Created an interactive dashboard for real-time sales monitoring with filtering and
+                                    drill-down
+                                    capabilities.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag" data-category="data-viz">Tableau</span>
+                                    <span class="skill-tag">BI</span>
+                                    <span class="skill-tag">Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 project-item" data-aos="fade-up" data-aos-delay="100"
+                        data-category="python ml">
+                        <div class="project-card h-100">
+                            <div class="project-image position-relative">
+                                <img src="/images/ML_Model.png" alt="ML Pipeline"
+                                    class="img-fluid rounded-top lightbox-img" data-bs-toggle="modal"
+                                    data-bs-target="#imageModal" data-img-src="/images/ML_Model.png"
+                                    data-img-title="Automated ML Pipeline">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5>View Details</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-body p-4">
+                                <h3>Automated ML Pipeline</h3>
+                                <p>Developed an automated machine learning pipeline for feature selection, model
+                                    training, and
+                                    hyperparameter tuning.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag" data-category="python">Python</span>
+                                    <span class="skill-tag" data-category="ml">Scikit-learn</span>
+                                    <span class="skill-tag">Pipeline</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 project-item" data-aos="fade-up" data-aos-delay="200"
+                        data-category="python">
+                        <div class="project-card h-100">
+                            <div class="project-image position-relative">
+                                <img src="/images/Web_Scraping.png" alt="Web Scraping"
+                                    class="img-fluid rounded-top lightbox-img" data-bs-toggle="modal"
+                                    data-bs-target="#imageModal" data-img-src="/images/Web_Scraping.png"
+                                    data-img-title="Web Scraping & NLP">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <h5>View Details</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-body p-4">
+                                <h3>Web Scraping & NLP</h3>
+                                <p>Built a web scraper to collect product reviews and applied NLP techniques for
+                                    sentiment
+                                    analysis and trend identification.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag" data-category="python">Python</span>
+                                    <span class="skill-tag">NLP</span>
+                                    <span class="skill-tag">Web Scraping</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
+            </section>
 
-            <div id="loading">Loading...</div> <!-- Thêm hiệu ứng tải -->
+            <section class="cta-section text-center mb-5 p-5 bg-light rounded" data-aos="fade-up">
+                <h2 class="mb-4">Interested in collaborating?</h2>
+                <p class="lead mb-4">I'm always open to working on new and exciting data projects.</p>
+                <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
+            </section>
+        </div>
 
-            <!-- Nội dung trang -->
-            <div class="container mt-5 pt-5">
-                <div class="text-center">
-                    <h1>Welcome to My Portfolio</h1>
-                    <p class="lead">Hello, this is a website I do with many different AI tools...</p>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <h2>About Me</h2>
-                        <p>Hello, I'm Hoaifong...</p>
-                        <p>Feel free to check out my projects and contact me for any collaborations!</p>
+        <!-- Image Lightbox Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="imageModalLabel">Project Image</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <img src="/images/avatar.JPG" alt="Avatar" class="avatar-img">
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-md-8 mx-auto form-section">
-                        <h2>Contact Me</h2>
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name"
-                                    required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="name@example.com"
-                                    required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="4"
-                                    placeholder="Write your message here" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
+                    <div class="modal-body text-center">
+                        <img src="" id="modalImage" class="img-fluid" alt="Project Image">
                     </div>
                 </div>
             </div>
-
-            <div id="footer"></div> <!-- Nơi chèn footer -->
         </div>
 
-        <!-- Nút quay lại đầu trang
-        <div class="scroll-to-top" id="scrollToTop">
-            <i class="fas fa-arrow-up"></i>
-        </div> -->
+        <%- contentFor('scripts') %>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Initialize AOS animations
+                    AOS.init({
+                        duration: 800,
+                        once: true
+                    });
 
-    </div>
+                    // Project filtering
+                    const filterButtons = document.querySelectorAll('.filter-btn');
+                    const projectItems = document.querySelectorAll('.project-item');
 
-    <script src="/js/loadContent.js" defer></script> <!-- Tham chiếu đến tệp JavaScript -->
-    <script src="/js/navbarHighlight.js" defer></script> <!-- Đường dẫn tới tệp JavaScript -->
-    <script src="/js/backToTop.js" defer></script>
-</body>
+                    filterButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            // Remove active class from all buttons
+                            filterButtons.forEach(btn => btn.classList.remove('active'));
+                            // Add active class to clicked button
+                            button.classList.add('active');
 
-</html>
+                            // Get filter value
+                            const filterValue = button.getAttribute('data-filter');
+
+                            // Filter projects
+                            projectItems.forEach(item => {
+                                const categories = item.getAttribute('data-category');
+                                if (filterValue === 'all' || categories.includes(filterValue)) {
+                                    item.classList.remove('hide');
+                                    setTimeout(() => {
+                                        item.classList.add('show');
+                                    }, 10);
+                                } else {
+                                    item.classList.remove('show');
+                                    item.classList.add('hide');
+                                }
+                            });
+                        });
+                    });
+
+                    // Add hover effect for project cards
+                    const projectCards = document.querySelectorAll('.project-card');
+                    projectCards.forEach(card => {
+                        card.addEventListener('mouseenter', () => {
+                            const overlay = card.querySelector('.project-overlay');
+                            if (overlay) {
+                                overlay.style.opacity = '1';
+                            }
+                        });
+
+                        card.addEventListener('mouseleave', () => {
+                            const overlay = card.querySelector('.project-overlay');
+                            if (overlay) {
+                                overlay.style.opacity = '0';
+                            }
+                        });
+                    });
+
+                    // Project Image Lightbox
+                    const lightboxImages = document.querySelectorAll('.lightbox-img');
+                    const modalImage = document.getElementById('modalImage');
+                    const modalTitle = document.getElementById('imageModalLabel');
+
+                    lightboxImages.forEach(img => {
+                        img.addEventListener('click', function () {
+                            const imgSrc = this.getAttribute('data-img-src');
+                            const imgTitle = this.getAttribute('data-img-title');
+
+                            modalImage.src = imgSrc;
+                            modalTitle.textContent = imgTitle;
+                        });
+                    });
+                });
+            </script>

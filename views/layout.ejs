@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Phạm Nguyễn Hoài Phong, a Data Engineer showcasing projects in data analysis, engineering, and visualization">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+
+    <title>
+        <%= typeof title !=='undefined' ? title + ' | DataDev Portfolio' : 'DataDev Portfolio' %>
+    </title>
+
+    <%- defineContent('head') %>
+</head>
+
+<body>
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="dark-mode-toggle" class="dark-mode-input">
+        <label for="dark-mode-toggle" class="dark-mode-label">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+            <span class="dark-mode-ball"></span>
+        </label>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <%- include('partials/navbar') %>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <%- defineContent('body') %>
+        </main>
+
+        <%- include('partials/footer') %>
+
+            <!-- Image Lightbox Modal -->
+            <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="imageModalLabel">Project Image</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <img src="" id="modalImage" class="img-fluid" alt="Project Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Top Button -->
+            <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+
+            <!-- JavaScript -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                // Initialize AOS
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    disable: 'mobile'
+                });
+
+                // Language change function
+                function changeLanguage(lang) {
+                    console.log('Changed language to: ' + lang);
+                    // Placeholder implementation - to be expanded later
+                    localStorage.setItem('language', lang);
+                    document.documentElement.setAttribute('lang', lang);
+
+                    // Basic translations for demo purposes
+                    const translations = {
+                        'en': {
+                            'nav-home': 'Home',
+                            'nav-about': 'About',
+                            'nav-projects': 'Projects',
+                            'nav-blog': 'Blog',
+                            'nav-contact': 'Contact',
+                            'site-name': 'DataDev'
+                        },
+                        'vi': {
+                            'nav-home': 'Trang chủ',
+                            'nav-about': 'Giới thiệu',
+                            'nav-projects': 'Dự án',
+                            'nav-blog': 'Blog',
+                            'nav-contact': 'Liên hệ',
+                            'site-name': 'DataDev'
+                        }
+                    };
+
+                    // Update DOM elements with translations
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (translations[lang] && translations[lang][key]) {
+                            el.textContent = translations[lang][key];
+                        }
+                    });
+                }
+
+                // Dark Mode Toggle Functionality
+                document.addEventListener('DOMContentLoaded', function () {
+                    const darkModeToggle = document.getElementById('dark-mode-toggle');
+                    const body = document.body;
+
+                    // Check for saved theme preference
+                    const savedTheme = localStorage.getItem('darkMode');
+                    if (savedTheme === 'true') {
+                        body.classList.add('dark-mode');
+                        darkModeToggle.checked = true;
+                    }
+
+                    // Toggle theme on click
+                    darkModeToggle.addEventListener('change', function () {
+                        if (this.checked) {
+                            body.classList.add('dark-mode');
+                            localStorage.setItem('darkMode', 'true');
+                        } else {
+                            body.classList.remove('dark-mode');
+                            localStorage.setItem('darkMode', 'false');
+                        }
+                    });
+
+                    // Back to Top Button
+                    const backToTopButton = document.getElementById('back-to-top');
+                    if (backToTopButton) {
+                        window.addEventListener('scroll', () => {
+                            if (window.scrollY > 300) {
+                                backToTopButton.classList.add('show');
+                            } else {
+                                backToTopButton.classList.remove('show');
+                            }
+                        });
+
+                        backToTopButton.addEventListener('click', () => {
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            });
+                        });
+                    }
+
+                    // Scroll Progress Bar
+                    const scrollProgressBar = document.querySelector('.scroll-progress-bar');
+                    if (scrollProgressBar) {
+                        window.addEventListener('scroll', () => {
+                            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                            scrollProgressBar.style.width = scrollPercentage + '%';
+                        });
+                    }
+
+                    // Project image lightbox
+                    const lightboxImages = document.querySelectorAll('.lightbox-img');
+                    if (lightboxImages.length > 0) {
+                        const modalImage = document.getElementById('modalImage');
+                        const modalTitle = document.getElementById('imageModalLabel');
+
+                        lightboxImages.forEach(img => {
+                            img.addEventListener('click', function () {
+                                const imgSrc = this.getAttribute('data-img-src');
+                                const imgTitle = this.getAttribute('data-img-title');
+
+                                modalImage.src = imgSrc;
+                                if (imgTitle) {
+                                    modalTitle.textContent = imgTitle;
+                                } else {
+                                    modalTitle.textContent = 'Project Image';
+                                }
+                            });
+                        });
+                    }
+                });
+            </script>
+
+            <%- defineContent('scripts') %>
+</body>
+
+</html>

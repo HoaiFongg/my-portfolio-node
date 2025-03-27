@@ -1,0 +1,21 @@
+<div class="container main-content">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body text-center p-5">
+                    <i class="fas fa-exclamation-triangle fa-4x text-warning mb-3"></i>
+                    <h1 class="display-4 mb-3">
+                        <%= title %>
+                    </h1>
+                    <p class="lead mb-4">
+                        <%= message %>
+                    </p>
+                    <a href="<%= activeTab === 'blog' ? '/blog' : '/' %>" class="btn btn-primary">
+                        <i class="fas fa-arrow-left me-2"></i>
+                        Go Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

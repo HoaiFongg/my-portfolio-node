@@ -1,115 +1,229 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- contentFor('head') %>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
-</head>
+    <%- contentFor('body') %>
 
-<body class="hidden">
-    <div id="barba-wrapper">
-        <div class="barba-container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Hi, I'm Hoaifong</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="projects">Projects</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://github.com/HoaiFongg" target="_blank">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="https://www.linkedin.com/in/ho%C3%A0i-phong-ph%E1%BA%A1m-nguy%E1%BB%85n-5b0bb626a/"
-                                    target="_blank">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
-                                </a>
-                            </li>
-                        </ul>
+        <div class="container">
+            <section class="hero-section text-center mb-5">
+                <h1 class="display-4 animate__animated animate__fadeInDown">About Me</h1>
+                <p class="lead animate__animated animate__fadeInUp">Get to know me better and discover my journey in
+                    data
+                    engineering</p>
+            </section>
+
+            <section class="about-content mb-5">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center mb-4 mb-md-0">
+                        <img src="/images/avatar.JPG" alt="Avatar" class="avatar-img animate__animated animate__zoomIn">
+                        <div class="mt-4 animate__animated animate__fadeIn">
+                            <a href="/contact" class="btn btn-primary">Contact Me</a>
+                            <a href="/projects" class="btn btn-outline-primary ms-2">View Projects</a>
+                            <button type="button" class="btn btn-outline-primary ms-2" data-bs-toggle="modal"
+                                data-bs-target="#resumeModal">
+                                <i class="fas fa-download me-2"></i>Resume
+                            </button>
+                            <a href="/cv" class="btn btn-outline-secondary ms-2">
+                                <i class="fas fa-print me-2"></i>Printable CV
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="animate__animated animate__fadeInRight">
+                            <h2 class="mb-4">Hello, I'm Phạm Nguyễn Hoài Phong</h2>
+                            <p>I'm a data enthusiast passionate about transforming raw data into actionable insights.
+                                With a
+                                strong background in data analysis and engineering, I leverage AI tools to automate
+                                workflows and optimize processes.</p>
+                            <p>My goal is to become a Data Engineer and work on large-scale data systems that empower
+                                businesses to make data-driven decisions.</p>
+                        </div>
                     </div>
                 </div>
-            </nav>
+            </section>
 
-            <div id="loading">Loading...</div> <!-- Thêm hiệu ứng tải -->
+            <section class="timeline-section mb-5">
+                <h2 class="text-center mb-4" data-aos="fade-up">My Journey</h2>
 
-            <!-- Nội dung trang -->
-            <div class="container mt-5 pt-5">
-                <div class="text-center">
-                    <h1>Welcome to My Portfolio</h1>
-                    <p class="lead">Hello, this is a website I do with many different AI tools...</p>
+                <div class="timeline-tabs">
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="timeline-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="education-tab" data-bs-toggle="pill"
+                                data-bs-target="#education" type="button" role="tab" aria-controls="education"
+                                aria-selected="true">
+                                <i class="fas fa-graduation-cap me-2"></i>Education
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="experience-tab" data-bs-toggle="pill"
+                                data-bs-target="#experience" type="button" role="tab" aria-controls="experience"
+                                aria-selected="false">
+                                <i class="fas fa-briefcase me-2"></i>Experience
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="certifications-tab" data-bs-toggle="pill"
+                                data-bs-target="#certifications" type="button" role="tab" aria-controls="certifications"
+                                aria-selected="false">
+                                <i class="fas fa-certificate me-2"></i>Certifications
+                            </button>
+                        </li>
+                    </ul>
                 </div>
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <h2>About Me</h2>
-                        <p>Hello, I'm Hoaifong...</p>
-                        <p>Feel free to check out my projects and contact me for any collaborations!</p>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <img src="/images/avatar.JPG" alt="Avatar" class="avatar-img">
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-md-8 mx-auto form-section">
-                        <h2>Contact Me</h2>
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name"
-                                    required>
+
+                <div class="tab-content" id="timeline-tabContent">
+                    <!-- Education Timeline -->
+                    <div class="tab-pane fade show active" id="education" role="tabpanel"
+                        aria-labelledby="education-tab">
+                        <div class="timeline">
+                            <div class="timeline-item" data-aos="fade-right">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2020 - 2024</div>
+                                    <h4>Bachelor's Degree in Data Science</h4>
+                                    <p class="mb-1">Saigon University</p>
+                                    <p>Specialized in data analytics, machine learning, and statistics. Graduated with
+                                        honors and completed a thesis on predictive analytics for student performance.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="name@example.com"
-                                    required>
+                            <div class="timeline-item" data-aos="fade-left">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2019 - 2020</div>
+                                    <h4>Intensive Python Programming Course</h4>
+                                    <p class="mb-1">Online Learning Platform</p>
+                                    <p>Completed an intensive 6-month course on Python programming, data structures, and
+                                        algorithms.</p>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="4"
-                                    placeholder="Write your message here" required></textarea>
+                            <div class="timeline-item" data-aos="fade-right">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2016 - 2019</div>
+                                    <h4>High School Diploma</h4>
+                                    <p class="mb-1">Le Hong Phong High School</p>
+                                    <p>Graduated with distinction in mathematics and natural sciences.</p>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
+                        </div>
+                    </div>
+
+                    <!-- Experience Timeline -->
+                    <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+                        <div class="timeline">
+                            <div class="timeline-item" data-aos="fade-right">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2023 - Present</div>
+                                    <h4>Data Analyst Intern</h4>
+                                    <p class="mb-1">XYZ Company</p>
+                                    <p>Developed dashboards and reports using Power BI. Automated data collection
+                                        processes using Python scripts, reducing manual work by 60%.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-left">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2022 - 2023</div>
+                                    <h4>Research Assistant</h4>
+                                    <p class="mb-1">Data Mining Lab</p>
+                                    <p>Assisted professors with research on data mining techniques. Implemented ML
+                                        algorithms for pattern recognition in large datasets.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-right">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2021 - 2022</div>
+                                    <h4>Freelance Web Developer</h4>
+                                    <p class="mb-1">Self-employed</p>
+                                    <p>Developed websites for small businesses and implemented analytics tracking
+                                        solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications Timeline -->
+                    <div class="tab-pane fade" id="certifications" role="tabpanel" aria-labelledby="certifications-tab">
+                        <div class="timeline">
+                            <div class="timeline-item" data-aos="fade-right">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2023</div>
+                                    <h4>AWS Certified Data Analytics - Specialty</h4>
+                                    <p class="mb-1">Amazon Web Services</p>
+                                    <p>Validated expertise in AWS data lakes, analytics services, and visualization
+                                        tools.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-left">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2022</div>
+                                    <h4>Microsoft Certified: Azure Data Engineer Associate</h4>
+                                    <p class="mb-1">Microsoft</p>
+                                    <p>Demonstrated skills in designing and implementing data solutions using Azure
+                                        services.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-right">
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2021</div>
+                                    <h4>Google Data Analytics Professional Certificate</h4>
+                                    <p class="mb-1">Google</p>
+                                    <p>Completed an 8-course program covering the entire data analysis process.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="footer"></div> <!-- Nơi chèn footer -->
+            <section class="skills-section mb-5">
+                <h2 class="text-center mb-4" data-aos="fade-up">My Skills</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="skill-card" data-aos="fade-up">
+                            <i class="fas fa-code fa-3x mb-3 text-primary"></i>
+                            <h4>Programming</h4>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated"
+                                    role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                            <p>Python, SQL, R</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-database fa-3x mb-3 text-primary"></i>
+                            <h4>Data Engineering</h4>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated"
+                                    role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                            <p>ETL, Data Warehousing, Big Data</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                            <h4>Data Analysis</h4>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated"
+                                    role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                            <p>Data Visualization, Statistics, ML</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
-        <!-- Nút quay lại đầu trang
-        <div class="scroll-to-top" id="scrollToTop">
-            <i class="fas fa-arrow-up"></i>
-        </div> -->
-
-    </div>
-
-    <script src="/js/loadContent.js" defer></script> <!-- Tham chiếu đến tệp JavaScript -->
-    <script src="/js/navbarHighlight.js" defer></script> <!-- Đường dẫn tới tệp JavaScript -->
-    <script src="/js/backToTop.js" defer></script>
-</body>
-
-</html>
+        <%- contentFor('scripts') %>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Initialize AOS animations
+                    AOS.init({
+                        duration: 800,
+                        once: true,
+                        mirror: true
+                    });
+                });
+            </script>

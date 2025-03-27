@@ -1,26 +1,50 @@
+<!-- Footer -->
 <footer class="footer">
-    <div class="container text-center">
-        <div class="row">
+    <div class="container">
+        <div class="row gy-4">
             <div class="col-md-4">
-                <h5>About Me</h5>
-                <p>Hi, I'm Hoaifong. A passionate data engineering student. Feel free to explore my work and reach out
-                    for collaborations.</p>
+                <div class="footer-brand">
+                    <h4><i class="fas fa-code me-2"></i>DataDev</h4>
+                    <p class="mt-3">Transforming complex data into valuable insights and solutions. Let's build better
+                        data systems together.</p>
+                </div>
             </div>
             <div class="col-md-4">
-                <h5>Contact Information</h5>
-                <p>Email: hoaifong@example.com</p>
-                <p>Phone: +123 456 7890</p>
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="footer-links list-unstyled">
+                    <li><a href="/"><i class="fas fa-angle-right me-2"></i>Home</a></li>
+                    <li><a href="/about"><i class="fas fa-angle-right me-2"></i>About Me</a></li>
+                    <li><a href="/projects"><i class="fas fa-angle-right me-2"></i>Projects</a></li>
+                    <li><a href="/blog"><i class="fas fa-angle-right me-2"></i>Blog</a></li>
+                    <li><a href="/contact"><i class="fas fa-angle-right me-2"></i>Contact</a></li>
+                </ul>
             </div>
             <div class="col-md-4">
-                <h5>Follow Me</h5>
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a><br>
-                <a href="https://www.linkedin.com/in/yourprofile/" target="_blank"><i class="fab fa-linkedin"></i>
-                    LinkedIn</a>
+                <h5 class="footer-heading">Contact Info</h5>
+                <ul class="footer-info list-unstyled">
+                    <li><i class="fas fa-map-marker-alt me-2"></i>Ho Chi Minh City, Vietnam</li>
+                    <li><i class="fas fa-envelope me-2"></i>email@example.com</li>
+                    <li><i class="fas fa-phone me-2"></i>+84 123 456 789</li>
+                </ul>
+                <div class="social-links mt-3">
+                    <a href="https://github.com/" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/" target="_blank" class="social-link"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/" target="_blank" class="social-link"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/" target="_blank" class="social-link"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-        <div class="row mt-4">
-            <div class="col-12">
-                <p>&copy; 2024 Hoaifong. All rights reserved.</p>
+        <hr class="footer-divider my-4">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="copyright mb-0">&copy; <%= new Date().getFullYear() %> Phạm Nguyễn Hoài Phong. All Rights
+                        Reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> and <i class="fas fa-coffee"></i></p>
             </div>
         </div>
     </div>

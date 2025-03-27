@@ -1,0 +1,256 @@
+<%- contentFor('head') %>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/css/print-cv.css" media="print">
+
+    <%- contentFor('body') %>
+
+        <div class="container">
+            <div class="row mb-4 mt-5">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <h1 class="mb-0 animate__animated animate__fadeInDown">My CV</h1>
+                    <div>
+                        <button onclick="window.print()" class="btn btn-primary me-2 print-button">
+                            <i class="fas fa-print me-2"></i>Print CV
+                        </button>
+                        <a href="/about" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-2"></i>Back to About
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-container bg-white p-4 rounded shadow-sm mb-5" id="cv-content">
+                <!-- CV Header -->
+                <div class="cv-header mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center mb-4 mb-md-0">
+                            <img src="/images/avatar.JPG" alt="Phạm Nguyễn Hoài Phong" class="cv-avatar">
+                        </div>
+                        <div class="col-md-9">
+                            <h1 class="cv-name">Phạm Nguyễn Hoài Phong</h1>
+                            <h4 class="cv-title mb-3">Data Engineer</h4>
+                            <div class="cv-contact-info">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-2"><i class="fas fa-envelope me-2"></i> hoaiphong@example.com
+                                        </div>
+                                        <div class="mb-2"><i class="fas fa-phone me-2"></i> +84 123 456 789</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Ho Chi Minh City,
+                                            Vietnam</div>
+                                        <div class="mb-2"><i class="fas fa-globe me-2"></i> portfolio-example.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="cv-section mb-4">
+                    <h3 class="cv-section-title"><i class="fas fa-user me-2"></i>Professional Summary</h3>
+                    <p>Data enthusiast with strong analytical skills and programming experience, passionate about
+                        transforming raw data into actionable insights. Skilled in ETL processes, database management,
+                        and data visualization, with a focus on building efficient data pipelines and systems.</p>
+                </div>
+
+                <!-- Education -->
+                <div class="cv-section mb-4">
+                    <h3 class="cv-section-title"><i class="fas fa-graduation-cap me-2"></i>Education</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="cv-timeline-item">
+                                <div class="cv-timeline-header d-flex justify-content-between">
+                                    <h4>Bachelor's Degree in Data Science</h4>
+                                    <div class="cv-date">2020 - 2024</div>
+                                </div>
+                                <div class="cv-timeline-subheader">Saigon University</div>
+                                <p>Specialized in data analytics, machine learning, and statistics. Graduated with
+                                    honors and completed a thesis on predictive analytics for student performance.</p>
+                            </div>
+                            <div class="cv-timeline-item">
+                                <div class="cv-timeline-header d-flex justify-content-between">
+                                    <h4>Intensive Python Programming Course</h4>
+                                    <div class="cv-date">2019 - 2020</div>
+                                </div>
+                                <div class="cv-timeline-subheader">Online Learning Platform</div>
+                                <p>Completed an intensive 6-month course on Python programming, data structures, and
+                                    algorithms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="cv-section mb-4">
+                    <h3 class="cv-section-title"><i class="fas fa-briefcase me-2"></i>Work Experience</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="cv-timeline-item">
+                                <div class="cv-timeline-header d-flex justify-content-between">
+                                    <h4>Data Analyst Intern</h4>
+                                    <div class="cv-date">2023 - Present</div>
+                                </div>
+                                <div class="cv-timeline-subheader">XYZ Company</div>
+                                <ul>
+                                    <li>Developed interactive dashboards and reports using Power BI to visualize sales
+                                        data across 5 regions.</li>
+                                    <li>Automated data collection processes using Python scripts, reducing manual work
+                                        by 60%.</li>
+                                    <li>Collaborated with cross-functional teams to identify data-driven solutions for
+                                        business challenges.</li>
+                                </ul>
+                            </div>
+                            <div class="cv-timeline-item">
+                                <div class="cv-timeline-header d-flex justify-content-between">
+                                    <h4>Research Assistant</h4>
+                                    <div class="cv-date">2022 - 2023</div>
+                                </div>
+                                <div class="cv-timeline-subheader">Data Mining Lab</div>
+                                <ul>
+                                    <li>Assisted professors with research on advanced data mining techniques for
+                                        educational data.</li>
+                                    <li>Implemented machine learning algorithms for pattern recognition in large
+                                        datasets.</li>
+                                    <li>Co-authored a research paper on predictive analytics in education.</li>
+                                </ul>
+                            </div>
+                            <div class="cv-timeline-item">
+                                <div class="cv-timeline-header d-flex justify-content-between">
+                                    <h4>Freelance Web Developer</h4>
+                                    <div class="cv-date">2021 - 2022</div>
+                                </div>
+                                <div class="cv-timeline-subheader">Self-employed</div>
+                                <ul>
+                                    <li>Developed responsive websites for small businesses using HTML, CSS, JavaScript,
+                                        and Node.js.</li>
+                                    <li>Implemented analytics tracking solutions to help clients understand user
+                                        behavior.</li>
+                                    <li>Managed client relationships and project timelines effectively.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="cv-section mb-4">
+                    <h3 class="cv-section-title"><i class="fas fa-cogs me-2"></i>Skills</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h4 class="cv-subsection-title">Programming</h4>
+                            <ul class="skill-list">
+                                <li>Python <span class="skill-level">Advanced</span></li>
+                                <li>SQL <span class="skill-level">Advanced</span></li>
+                                <li>JavaScript <span class="skill-level">Intermediate</span></li>
+                                <li>R <span class="skill-level">Intermediate</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h4 class="cv-subsection-title">Data Engineering</h4>
+                            <ul class="skill-list">
+                                <li>ETL Processes <span class="skill-level">Advanced</span></li>
+                                <li>Data Warehousing <span class="skill-level">Intermediate</span></li>
+                                <li>SQL Server <span class="skill-level">Advanced</span></li>
+                                <li>Big Data <span class="skill-level">Basic</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h4 class="cv-subsection-title">Data Analysis</h4>
+                            <ul class="skill-list">
+                                <li>Data Visualization <span class="skill-level">Advanced</span></li>
+                                <li>Power BI <span class="skill-level">Advanced</span></li>
+                                <li>Tableau <span class="skill-level">Intermediate</span></li>
+                                <li>Machine Learning <span class="skill-level">Intermediate</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="cv-section mb-4">
+                    <h3 class="cv-section-title"><i class="fas fa-certificate me-2"></i>Certifications</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="cv-cert-item">
+                                <div class="d-flex justify-content-between">
+                                    <h4>AWS Certified Data Analytics - Specialty</h4>
+                                    <div class="cv-date">2023</div>
+                                </div>
+                                <div>Amazon Web Services</div>
+                            </div>
+                            <div class="cv-cert-item">
+                                <div class="d-flex justify-content-between">
+                                    <h4>Microsoft Certified: Azure Data Engineer Associate</h4>
+                                    <div class="cv-date">2022</div>
+                                </div>
+                                <div>Microsoft</div>
+                            </div>
+                            <div class="cv-cert-item">
+                                <div class="d-flex justify-content-between">
+                                    <h4>Google Data Analytics Professional Certificate</h4>
+                                    <div class="cv-date">2021</div>
+                                </div>
+                                <div>Google</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="cv-section mb-4">
+                    <h3 class="cv-section-title"><i class="fas fa-project-diagram me-2"></i>Key Projects</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="cv-project-item">
+                                <h4>Student Progress Prediction Model</h4>
+                                <p>Developed a machine learning model using Python and Random Forest to predict student
+                                    academic performance with 85% accuracy.</p>
+                            </div>
+                            <div class="cv-project-item">
+                                <h4>Global Customer Analysis Dashboard</h4>
+                                <p>Created an interactive dashboard using Power BI to analyze customer behavior across
+                                    43 countries, identifying key market opportunities.</p>
+                            </div>
+                            <div class="cv-project-item">
+                                <h4>Retail Data Warehouse</h4>
+                                <p>Designed and implemented a data warehouse using SQL Server to centralize retail data
+                                    from multiple sources for efficient reporting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="cv-section mb-4">
+                    <h3 class="cv-section-title"><i class="fas fa-language me-2"></i>Languages</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="language-list">
+                                <li>English <span class="language-level">Fluent</span></li>
+                                <li>Vietnamese <span class="language-level">Native</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- References -->
+                <div class="cv-section cv-references">
+                    <h3 class="cv-section-title"><i class="fas fa-users me-2"></i>References</h3>
+                    <p>Available upon request</p>
+                </div>
+            </div>
+        </div>
+
+        <%- contentFor('scripts') %>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Initialize AOS animations
+                    AOS.init({
+                        duration: 800,
+                        once: true
+                    });
+                });
+            </script>

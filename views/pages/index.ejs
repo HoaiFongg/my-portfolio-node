@@ -1,170 +1,446 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- contentFor('head') %>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
-</head>
+    <%- contentFor('body') %>
 
-<body class="hidden">
-    <div id="barba-wrapper">
-        <div class="barba-container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Hi, I'm Hoaifong</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="projects">Projects</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://github.com/HoaiFongg" target="_blank">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="https://www.linkedin.com/in/ho%C3%A0i-phong-ph%E1%BA%A1m-nguy%E1%BB%85n-5b0bb626a/"
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                            <h1 class="hero-title mb-3">
+                                Hello, I'm <span class="text-primary">Hoài Phong</span>
+                            </h1>
+                            <div class="hero-subtitle mb-4">
+                                <span>I'm a </span>
+                                <span id="typing-text" class="typing-text"></span>
+                                <span class="typing-cursor">|</span>
+                            </div>
+                            <p class="hero-description mb-4">
+                                Transforming complex data challenges into valuable insights and efficient solutions.
+                                Specializing in data pipelines, analytics, and machine learning implementation.
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="/projects" class="btn btn-primary me-3 mb-2 mb-md-0">View Projects</a>
+                                <a href="/contact" class="btn btn-outline-primary mb-2 mb-md-0">Get In Touch</a>
+                                <a href="/files/resume.pdf" class="btn btn-secondary ms-md-3 mb-2 mb-md-0"
                                     target="_blank">
-                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                    <i class="fas fa-download me-2"></i>Download CV
                                 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <div id="loading">Loading...</div> <!-- Thêm hiệu ứng tải -->
-            <!-- Nội dung trang -->
-            <div class="container mt-5 pt-5">
-                <!-- Phần tiêu đề chính -->
-                <div class="hero-section text-center mb-5">
-                    <h1 class="display-4 animate__animated animate__fadeInDown">Welcome to My AI-Generated Portfolio
-                    </h1>
-                    <p class="lead animate__animated animate__fadeInUp">I'm Phạm Nguyễn Hoài Phong, a Data Engineer
-                        enthusiast driven by AI technologies.</p>
-                    <a href="projects.html"
-                        class="btn btn-outline-light btn-lg animate__animated animate__fadeInUp mt-3">Explore My
-                        Projects</a>
-                </div>
-
-                <!-- Phần giới thiệu -->
-                <div class="row align-items-center mt-5">
-                    <div class="col-md-6">
-                        <h2 class="animate__animated animate__fadeInLeft">About Me</h2>
-                        <p class="animate__animated animate__fadeInLeft">I’m a data enthusiast passionate about
-                            transforming raw data into actionable insights. With a strong background in data analysis
-                            and engineering, I leverage AI tools to automate workflows and optimize processes.</p>
-                        <p class="animate__animated animate__fadeInLeft">My goal is to become a Data Engineer and work
-                            on large-scale data systems that empower businesses to make data-driven decisions.</p>
-                        <a href="about.html" class="btn btn-primary animate__animated animate__fadeInLeft mt-3">Learn
-                            More About Me</a>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <img src="/images/avatar.JPG" alt="Avatar"
-                            class="avatar-img rounded-circle animate__animated animate__zoomIn">
-                    </div>
-                </div>
-
-                <!-- Phần kỹ năng -->
-                <div class="skills-section text-center mt-5">
-                    <h2 class="animate__animated animate__fadeInUp">Skills</h2>
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <div class="skill-card animate__animated animate__fadeInUp">
-                                <i class="fas fa-code fa-3x mb-3"></i>
-                                <h4>Programming</h4>
-                                <p>Python, SQL</p>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="skill-card animate__animated animate__fadeInUp">
-                                <i class="fas fa-chart-line fa-3x mb-3"></i>
-                                <h4>Data Analysis</h4>
-                                <p>Data Collection, Cleaning, Visualization</p>
+                        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                            <div class="hero-image-container text-center">
+                                <div class="hero-icon-placeholder">
+                                    <i class="fas fa-database"></i>
+                                    <i class="fas fa-chart-line"></i>
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="hero-shape-1"></div>
+                                <div class="hero-shape-2"></div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="skill-card animate__animated animate__fadeInUp">
-                                <i class="fas fa-database fa-3x mb-3"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Highlights Section -->
+            <section class="highlights-section py-5">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="highlight-card">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h3 class="highlight-title">Data Engineering</h3>
+                                <p class="highlight-text">Building robust data pipelines and warehouses to efficiently
+                                    process and store your data.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="highlight-card">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3 class="highlight-title">Data Analytics</h3>
+                                <p class="highlight-text">Transforming raw data into meaningful insights that drive
+                                    business decisions.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="highlight-card">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3 class="highlight-title">Machine Learning</h3>
+                                <p class="highlight-text">Implementing ML models to predict trends and automate
+                                    data-driven decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section py-5">
+                <div class="container">
+                    <div class="stats-container" data-aos="fade-up">
+                        <div class="row text-center">
+                            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                                <div class="stat-item">
+                                    <div class="stat-number">
+                                        <span class="counter" data-count="15">0</span>+
+                                    </div>
+                                    <p class="stat-title">Projects Completed</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                                <div class="stat-item">
+                                    <div class="stat-number">
+                                        <span class="counter" data-count="3">0</span>+
+                                    </div>
+                                    <p class="stat-title">Years Experience</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="stat-item">
+                                    <div class="stat-number">
+                                        <span class="counter" data-count="5">0</span>+
+                                    </div>
+                                    <p class="stat-title">Certifications</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="stat-item">
+                                    <div class="stat-number">
+                                        <span class="counter" data-count="10">0</span>+
+                                    </div>
+                                    <p class="stat-title">Happy Clients</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Projects Section -->
+            <section class="featured-projects-section py-5">
+                <div class="container">
+                    <div class="section-header text-center mb-5" data-aos="fade-up">
+                        <h2 class="section-title">Featured Projects</h2>
+                        <p class="section-subtitle">Explore some of my recent work</p>
+                    </div>
+
+
+                    <div class="row g-4">
+                        <!-- Project 1 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                            <div class="project-card h-100">
+                                <div class="project-image position-relative">
+                                    <div class="placeholder-img d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-chart-bar fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="project-overlay">
+                                        <div class="project-overlay-content">
+                                            <h5>View Details</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-body p-4">
+                                    <h5 class="card-title">Student Progress Prediction</h5>
+                                    <p class="card-text">Automated data collection and prediction of student progress
+                                        using Python and Random Forest models.</p>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">ML</span>
+                                        <span class="skill-tag">Pandas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card h-100">
+                                <div class="project-image position-relative">
+                                    <div class="placeholder-img d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-chart-pie fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="project-overlay">
+                                        <div class="project-overlay-content">
+                                            <h5>View Details</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-body p-4">
+                                    <h5 class="card-title">Global Customer Analysis</h5>
+                                    <p class="card-text">Analysis of retail customer data across 43 countries using
+                                        Power BI, Excel and DAX.</p>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Power BI</span>
+                                        <span class="skill-tag">DAX</span>
+                                        <span class="skill-tag">Excel</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card h-100">
+                                <div class="project-image position-relative">
+                                    <div class="placeholder-img d-flex align-items-center justify-content-center">
+                                        <i class="fas fa-database fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="project-overlay">
+                                        <div class="project-overlay-content">
+                                            <h5>View Details</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-body p-4">
+                                    <h5 class="card-title">Data Warehouse for Retail</h5>
+                                    <p class="card-text">Built a data warehouse for managing retail data with SQL Server
+                                        and ETL processes.</p>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">SQL</span>
+                                        <span class="skill-tag">ETL</span>
+                                        <span class="skill-tag">SSIS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5" data-aos="fade-up">
+                        <a href="/projects" class="btn btn-primary">View All Projects</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="services-section py-5 bg-light">
+                <div class="container">
+                    <div class="section-header text-center mb-5" data-aos="fade-up">
+                        <h2 class="fw-bold">My Services</h2>
+                        <p class="lead">What I can offer to help your business succeed</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-4" data-aos="fade-up">
+                            <div class="service-card text-center p-4 h-100">
+                                <div class="service-icon mb-3">
+                                    <i class="fas fa-database fa-3x text-primary"></i>
+                                </div>
                                 <h4>Data Engineering</h4>
-                                <p>ETL, Data Warehousing, Automation</p>
+                                <p>Building robust data pipelines and warehouses to ensure your data is clean,
+                                    accessible, and ready for analysis.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="service-card text-center p-4 h-100">
+                                <div class="service-icon mb-3">
+                                    <i class="fas fa-chart-bar fa-3x text-primary"></i>
+                                </div>
+                                <h4>Data Visualization</h4>
+                                <p>Creating interactive dashboards and reports that transform complex data into
+                                    actionable insights.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="service-card text-center p-4 h-100">
+                                <div class="service-icon mb-3">
+                                    <i class="fas fa-robot fa-3x text-primary"></i>
+                                </div>
+                                <h4>Machine Learning</h4>
+                                <p>Developing predictive models and AI solutions to help you make data-driven decisions
+                                    and gain competitive advantage.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Phần dự án nổi bật -->
-                <div class="projects-section text-center mt-5">
-                    <h2 class="animate__animated animate__fadeInUp">Highlighted Projects</h2>
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <div class="project-card animate__animated animate__fadeInUp">
-                                <img src="/images/Predict_Students.png" alt="Project 1" class="img-fluid rounded mb-3">
-                                <h4>Predict Student Progress</h4>
-                                <p>Automated data collection and prediction of student academic performance using Python
-                                    and Random Forest models.</p>
+            <!-- Testimonials Section -->
+            <section class="testimonials py-5">
+                <div class="container">
+                    <div class="section-header text-center mb-5" data-aos="fade-up">
+                        <h2 class="fw-bold">Client Feedback</h2>
+                        <p class="lead">What people say about working with me</p>
+                    </div>
+
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+                        <div class="carousel-inner">
+                            <!-- Testimonial 1 -->
+                            <div class="carousel-item active">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-img mb-3">
+                                        <div class="testimonial-icon-placeholder">
+                                            <i class="fas fa-user-circle fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>"Phong has been exceptional in helping us make sense of our customer data.
+                                            His expertise in data engineering and visualization has transformed how we
+                                            make business decisions."</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <h5>Sarah Johnson</h5>
+                                        <p>Marketing Director, XYZ Company</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-img mb-3">
+                                        <div class="testimonial-icon-placeholder">
+                                            <i class="fas fa-user-circle fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>"Working with Phong on our data warehouse project was a fantastic experience.
+                                            His technical skills and ability to translate complex concepts into simple
+                                            terms were invaluable."</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <h5>David Chen</h5>
+                                        <p>CTO, Tech Innovations</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-img mb-3">
+                                        <div class="testimonial-icon-placeholder">
+                                            <i class="fas fa-user-circle fa-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p>"The predictive model Phong built for our student performance tracking system
+                                            has been a game-changer. His attention to detail and commitment to results
+                                            are outstanding."</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <h5>Maria Rodriguez</h5>
+                                        <p>Education Director, Learning Academy</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="project-card animate__animated animate__fadeInUp">
-                                <img src="/images/Power_BI_visual_dashboard.png" alt="Project 2"
-                                    class="img-fluid rounded mb-3">
-                                <h4>Global Customer Analysis</h4>
-                                <p>Analyzed global retail customer data using Power BI, Excel, and DAX to generate
-                                    insights for business decisions.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="project-card animate__animated animate__fadeInUp">
-                                <img src="/images/Data_Warehouse.png" alt="Project 3" class="img-fluid rounded mb-3">
-                                <h4>Data Warehouse for Retail</h4>
-                                <p>Built a data warehouse for managing and analyzing retail data from 2,500 households
-                                    using SQL Server and ETL processes.</p>
-                            </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="prev">
+                            <i class="fas fa-chevron-left"></i>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="next">
+                            <i class="fas fa-chevron-right"></i>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section py-5 bg-primary text-white">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                            <h2 class="mb-3">Ready to transform your data?</h2>
+                            <p class="lead mb-4">Let's work together to turn your data into a strategic asset</p>
+                            <a href="/contact" class="btn btn-light btn-lg">Get in Touch</a>
                         </div>
                     </div>
-                    <a href="projects"
-                        class="btn btn-outline-primary btn-lg mt-4 animate__animated animate__fadeInUp">View All
-                        Projects</a>
-                    <p></p>
                 </div>
-            </div>
-
-
-            <div id="footer"></div> <!-- Nơi chèn footer -->
+            </section>
         </div>
 
-        <!-- Nút quay lại đầu trang
-        <div class="scroll-to-top" id="scrollToTop">
-            <i class="fas fa-arrow-up"></i>
-        </div> -->
+        <%- contentFor('scripts') %>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Initialize AOS
+                    AOS.init({
+                        duration: 800,
+                        easing: 'ease-in-out',
+                        once: true
+                    });
 
-    </div>
+                    // Typing effect
+                    const typingTextElement = document.getElementById('typing-text');
+                    const phrases = ["Data Engineer", "Data Analyst", "ML Enthusiast", "Problem Solver"];
+                    let phraseIndex = 0;
+                    let charIndex = 0;
+                    let isDeleting = false;
+                    let typingSpeed = 100;
 
-    <script src="/js/loadContent.js" defer></script> <!-- Tham chiếu đến tệp JavaScript -->
-    <script src="/js/navbarHighlight.js" defer></script> <!-- Đường dẫn tới tệp JavaScript -->
-    <script src="/js/backToTop.js" defer></script>
-</body>
+                    function typeEffect() {
+                        const currentPhrase = phrases[phraseIndex];
 
-</html>
+                        if (isDeleting) {
+                            typingTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                            charIndex--;
+                            typingSpeed = 50;
+                        } else {
+                            typingTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                            charIndex++;
+                            typingSpeed = 100;
+                        }
+
+                        if (!isDeleting && charIndex === currentPhrase.length) {
+                            isDeleting = true;
+                            typingSpeed = 1500; // Pause at end
+                        } else if (isDeleting && charIndex === 0) {
+                            isDeleting = false;
+                            phraseIndex = (phraseIndex + 1) % phrases.length;
+                            typingSpeed = 500; // Pause before typing new phrase
+                        }
+
+                        setTimeout(typeEffect, typingSpeed);
+                    }
+
+                    // Start typing effect
+                    typeEffect();
+
+                    // Stats counter animation
+                    const counters = document.querySelectorAll('.counter');
+                    const speed = 200;
+
+                    function animateCounter() {
+                        counters.forEach(counter => {
+                            const target = +counter.getAttribute('data-count');
+                            const count = +counter.innerText;
+                            const increment = Math.ceil(target / speed);
+
+                            if (count < target) {
+                                counter.innerText = Math.min(count + increment, target);
+                                setTimeout(animateCounter, 30);
+                            }
+                        });
+                    }
+
+                    // Start animation when elements come into view
+                    const statsSection = document.querySelector('.stats-container');
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                animateCounter();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+
+                    if (statsSection) {
+                        observer.observe(statsSection);
+                    }
+                });
+            </script>
