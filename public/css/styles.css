@@ -130,7 +130,7 @@ body {
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #fff !important;
+    color: #181010 !important;
     transition: transform var(--transition-speed) ease;
 }
 
@@ -141,7 +141,7 @@ body {
 .nav-link {
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
     transition: all var(--transition-speed) ease;
     position: relative;
 }

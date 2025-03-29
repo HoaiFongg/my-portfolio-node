@@ -11,6 +11,43 @@
         display: none !important;
     }
 
+    /* Navbar Styling */
+    .navbar {
+        background-color: #1a73e8 !important;
+        /* Primary Blue */
+        color: #ffffff !important;
+        /* Text màu trắng */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+        /* Shadow nhẹ */
+    }
+
+    .navbar-brand {
+        font-size: 18pt !important;
+        font-weight: bold !important;
+        color: #ffffff !important;
+        /* Text màu trắng */
+    }
+
+    .nav-link {
+        font-size: 12pt !important;
+        color: #ffffff !important;
+        /* Text màu trắng */
+        text-decoration: none !important;
+        padding: 0.5rem 1rem !important;
+        transition: color 0.3s ease !important;
+    }
+
+    .nav-link:hover {
+        color: #ff9800 !important;
+        /* Orange khi hover */
+    }
+
+    .nav-link.active {
+        font-weight: bold !important;
+        color: #f57c00 !important;
+        /* Orange đậm cho liên kết đang hoạt động */
+    }
+
     /* Set page size and margins */
     @page {
         size: A4;
@@ -20,11 +57,16 @@
     body {
         margin: 0;
         padding: 0;
-        line-height: 1.5;
-        font-size: 11pt;
-        color: #000;
-        background: #fff;
+        line-height: 1.6;
+        /* Tăng khoảng cách dòng để dễ đọc */
+        font-size: 12pt;
+        /* Kích thước chữ vừa phải */
+        color: #202124;
+        /* Gần đen */
+        background: #ffffff;
+        /* Trắng */
         font-family: 'Arial', 'Helvetica', sans-serif;
+        /* Font chữ phổ biến */
     }
 
     /* Remove shadows, borders, etc. */
@@ -47,18 +89,24 @@
 
     /* Header styling */
     .cv-header {
-        margin-bottom: 15px !important;
+        margin-bottom: 20px !important;
     }
 
     .cv-name {
-        font-size: 22pt !important;
+        font-size: 26pt !important;
+        /* Tiêu đề chính lớn hơn */
+        font-weight: bold !important;
         margin-bottom: 5px !important;
+        color: #1a73e8 !important;
+        /* Primary Blue */
     }
 
     .cv-title {
         font-size: 14pt !important;
+        font-weight: 500 !important;
         margin-bottom: 10px !important;
-        color: #555 !important;
+        color: #5f6368 !important;
+        /* Xám đậm */
     }
 
     .cv-avatar {
@@ -66,59 +114,75 @@
         height: 120px !important;
         object-fit: cover !important;
         border-radius: 50% !important;
+        border: 2px solid #1a73e8 !important;
+        /* Primary Blue */
     }
 
     /* Section styling */
     .cv-section {
-        margin-bottom: 15px !important;
+        margin-bottom: 25px !important;
         page-break-inside: avoid;
     }
 
     .cv-section-title {
-        font-size: 14pt !important;
-        color: #222 !important;
-        border-bottom: 1px solid #555 !important;
-        padding-bottom: 5px !important;
+        font-size: 16pt !important;
+        font-weight: bold !important;
+        color: #1a73e8 !important;
+        /* Primary Blue */
+        border-bottom: 1px solid #dadce0 !important;
+        /* Light Gray */
+        padding-bottom: 8px !important;
         margin-bottom: 10px !important;
     }
 
     /* Timeline items */
     .cv-timeline-item {
-        margin-bottom: 10px !important;
+        margin-bottom: 15px !important;
         page-break-inside: avoid;
     }
 
     .cv-timeline-header h4 {
-        font-size: 12pt !important;
+        font-size: 14pt !important;
+        font-weight: bold !important;
         margin: 0 !important;
+        color: #202124 !important;
+        /* Gần đen */
     }
 
     .cv-timeline-subheader {
+        font-size: 12pt !important;
         font-style: italic !important;
-        color: #555 !important;
+        color: #5f6368 !important;
+        /* Xám đậm */
         margin-bottom: 5px !important;
     }
 
     .cv-date {
+        font-size: 11pt !important;
         font-weight: normal !important;
-        color: #666 !important;
+        color: #4285f4 !important;
+        /* Light Blue */
     }
 
     /* Lists */
     ul {
-        padding-left: 20px !important;
+        font-size: 11pt !important;
+        color: #202124 !important;
+        /* Gần đen */
+        padding-left: 25px !important;
         margin-bottom: 10px !important;
     }
 
     li {
-        margin-bottom: 3px !important;
+        margin-bottom: 5px !important;
     }
 
     /* Skill levels */
     .skill-level,
     .language-level {
         font-weight: normal !important;
-        color: #555 !important;
+        color: #1a73e8 !important;
+        /* Primary Blue */
         float: right !important;
     }
 
@@ -132,8 +196,15 @@
     .skill-list li,
     .language-list li {
         margin-bottom: 5px !important;
-        border-bottom: 1px dotted #ddd !important;
+        border-bottom: 1px dotted #dadce0 !important;
+        /* Light Gray */
         padding-bottom: 5px !important;
+        background: rgba(26, 115, 232, 0.05) !important;
+        /* Light Blue Background */
+        padding: 5px !important;
+        border-radius: 4px !important;
+        color: #1a73e8 !important;
+        /* Primary Blue */
     }
 
     /* Icons */
@@ -146,8 +217,9 @@
 
     /* Links */
     a {
-        text-decoration: none !important;
-        color: #000 !important;
+        text-decoration: underline !important;
+        color: #1a73e8 !important;
+        /* Primary Blue */
     }
 
     /* Footer pagination */
@@ -157,6 +229,7 @@
         bottom: 0;
         right: 0;
         font-size: 9pt;
-        color: #999;
+        color: #5f6368;
+        /* Xám đậm */
     }
 }
